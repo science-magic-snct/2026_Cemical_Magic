@@ -6,9 +6,9 @@
 <style>
 :root{--bg:#091722;--panel:#102533;--panel2:#132d3b;--line:#294654;--text:#eaf3f6;--muted:#aac0ca;--accent:#71ddd1;--gold:#e4c27b;--red:#ef9a91}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:80px}body{margin:0;background:radial-gradient(ellipse at 80% 0%,#123244 0,transparent 38%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;line-height:1.8}a{color:var(--accent)}.wrap{width:min(1080px,calc(100% - 36px));margin:auto}header{position:sticky;top:0;z-index:10;background:#091722ed;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.1em;font-size:14px}.mark{display:grid;place-items:center;width:42px;height:42px;border:1px solid #3c7780;border-radius:12px;color:var(--accent);font-size:23px}.sub{display:block;color:var(--muted);font-size:9px;letter-spacing:.17em;font-weight:500}.navlinks{display:flex;gap:20px;flex-wrap:wrap}.navlinks a{text-decoration:none;color:var(--muted);font-size:12px}.navlinks a:hover{color:var(--accent)}.hero{padding:76px 0 54px}.eyebrow,.tag,.num{font-size:11px;letter-spacing:.17em;color:var(--accent);font-weight:750}.hero h1{font-size:clamp(32px,6vw,58px);line-height:1.25;letter-spacing:.02em;margin:14px 0 20px}.lead{max-width:720px;color:var(--muted);font-size:16px}.hero-panel{margin-top:30px;padding:25px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(115deg,#123747,#102533 70%);display:flex;align-items:center;justify-content:space-between;gap:20px}.hero-panel p{margin:0;max-width:690px}.orb{flex:none;width:84px;height:84px;border:1px solid #3e858a;border-radius:50%;display:grid;place-items:center;font-size:38px;color:var(--accent);box-shadow:0 0 40px #71ddd11a}.section{padding:32px 0}.sectionhead{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:20px}.sectionhead h2{margin:0;font-size:24px}.sectionhead span{font-size:10px;letter-spacing:.16em;color:var(--accent)}.intro{color:var(--muted);margin-top:-7px;margin-bottom:20px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.card{border:1px solid var(--line);background:linear-gradient(155deg,#122b39,#0f222f);border-radius:15px;padding:21px;min-width:0}.card h3{font-size:18px;margin:4px 0 8px}.card p{color:var(--muted);font-size:14px;margin:8px 0}.tag{display:inline-block;border:1px solid #365b68;border-radius:999px;padding:2px 9px;font-size:10px;letter-spacing:.08em;margin-right:4px;margin-bottom:4px}.symbol{width:45px;height:45px;display:grid;place-items:center;border-radius:12px;background:#1b3a47;color:var(--accent);font-size:24px;margin-bottom:14px}.meta{color:var(--muted);font-size:12px}.details{margin-top:13px;border-top:1px solid var(--line);padding-top:10px}.details summary{cursor:pointer;color:var(--accent);font-size:13px;font-weight:650}.details p,.details div{margin-top:10px;font-size:14px}.notice{border:1px solid #69583a;background:#28251e;color:#eadbb9;border-radius:12px;padding:15px 17px;font-size:13px}.timeline{display:grid;grid-template-columns:100px 1fr;gap:15px;padding:16px 0;border-bottom:1px solid var(--line)}.timeline:last-child{border:0}.year{color:var(--accent);font-size:12px;font-weight:750;letter-spacing:.08em}.timeline h3{font-size:16px;margin:0 0 3px}.timeline p{margin:0;color:var(--muted);font-size:14px}.chips{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.chip{border:1px solid var(--line);background:#102633;color:var(--muted);border-radius:999px;padding:5px 12px;font-size:12px;cursor:pointer}.chip.active,.chip:hover{border-color:var(--accent);color:var(--accent)}.search{width:100%;padding:12px 14px;background:#0b1c28;border:1px solid var(--line);border-radius:10px;color:var(--text);font:inherit;margin-bottom:15px}.search:focus{outline:1px solid var(--accent)}.empty{display:none;color:var(--muted);padding:15px}.foot{margin-top:45px;border-top:1px solid var(--line);padding:27px 0 40px;color:var(--muted);font-size:12px}.small{font-size:12px;color:var(--muted)}
 
-/* YouTube Shorts 埋め込みプレイヤー用スタイル */
-.video-embed-container{position:relative;width:100%;max-width:320px;margin:15px auto;padding-bottom:177.78%;height:0;overflow:hidden;border-radius:14px;border:1px solid var(--line);background:#000;box-shadow:0 8px 24px rgba(0,0,0,0.4)}
-.video-embed-container iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+/* YouTube Shorts 埋め込みプレイヤー用スタイル（縦長を適切なサイズに制限） */
+.video-embed-container{width:100%;max-width:300px;height:480px;max-height:70vh;margin:15px auto;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#000;box-shadow:0 8px 24px rgba(0,0,0,0.4)}
+.video-embed-container iframe{width:100%;height:100%;border:none}
 
 /* 著作権引用用画像スタイル */
 .figure-citation{margin:18px 0;text-align:center;background:#0b1c28;padding:12px;border-radius:10px;border:1px solid var(--line)}
@@ -34,6 +34,7 @@
 <article class="card experiment" data-tags="light color liquid" data-search="アオダモ 蛍光 紫外線 UV 光 紫外線 液体 カフェー酸誘導体 ベンゼン環">
 <div class="symbol">✧</div><div><span class="tag">光・発光</span><span class="tag">色の変化</span><span class="tag">液体</span></div><h3>アオダモ</h3><p><strong>概要：</strong> 蛍光</p><div class="details"><details><summary>解説・見どころ</summary><p>アオダモに紫外線を当てると青白く光って見えることがあります。これは「蛍光」という現象です。<br>蛍光は、物質の中の電子が紫外線のエネルギーを受け取って一時的に高いエネルギー状態になり、その後もとの状態に戻るときに余ったエネルギーを光として放出することで起こります。アオダモでは、植物が作るカフェー酸誘導体という化合物が蛍光の原因である可能性が高いと考えられています。これらの分子にはベンゼン環が含まれており、電子が動きやすい構造を持っています。そのため紫外線のエネルギーを効率よく吸収し、私たちの目に見える青い光として放出できるのです。</p>
 
+<!-- カフェー酸構造式 (SVG) -->
 <figure class="figure-citation">
   <div class="svg-wrapper">
     <svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg" stroke="#000" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -58,7 +59,7 @@
   </div>
   <figcaption class="exp-img-caption">
     <strong>【図1】 カフェー酸 (Caffeic acid) の化学構造式</strong>[cite: 2]<br>
-    共役二重結合とベンゼン環を有し、紫外線を吸収して蛍光を示す原因骨格とされる[cite: 2]。<br>
+    共役二重結合とベンゼン環を有し、紫外線を吸収して蛍光を示す原因骨格とされる。<br>
     <span class="small">出典: Wikimedia Commons (Public Domain) <a href="https://commons.wikimedia.org/wiki/File:Caffeic_acid_structure.svg" target="_blank" rel="noopener">閲覧リンク</a>[cite: 2]</span>
   </figcaption>
 </figure>
@@ -69,6 +70,7 @@
 <article class="card experiment" data-tags="color liquid" data-search="ゲーミング反応 酸化還元反応 インジゴカルミン グルコース 液体 信号反応 グラデーション Lab*">
 <div class="symbol">◉</div><div><span class="tag">色の変化</span><span class="tag">酸化還元反応</span><span class="tag">液体</span></div><h3>ゲーミング反応</h3><p><strong>概要：</strong> 酸化還元反応</p><div class="details"><details><summary>解説・見どころ</summary><p>物質の色は、分子がどの波長の光を吸収するかによって決まります。インジゴカルミンは酸化や還元によって電子の状態が変化するため、吸収する光の種類も変わります。その結果、私たちの目には青・緑・赤・黄など異なる色として見えるのです。<br>この現象は「インジゴカルミン」という色素と、グルコース（ブドウ糖）の酸化還元反応によって起こります。インジゴカルミンは電子を受け取ったり失ったりすると分子の構造が変化し、それに伴って見える色も変わります。</p>
 
+<!-- インジゴカルミン構造式 (SVG) -->
 <figure class="figure-citation">
   <div class="svg-wrapper">
     <svg viewBox="0 0 540 200" xmlns="http://www.w3.org/2000/svg" stroke="#000" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -136,7 +138,7 @@
   </figcaption>
 </figure>
 
-<p>振とうや攪拌によって空気中の酸素が溶け込むと色素が酸化され、時間が経つとグルコースによって再び還元されます。この酸化と還元のバランスが変化することで、色が連続的に移り変わっていきます。<br>一般的な「信号反応」では緑→赤→黄という段階的な変化が見られますが、ゲーミング反応では色の境目がなめらかにつながり、鮮やかなグラデーションになります。私たちの研究では、この色変化を動画撮影し、Lab*色空間を用いて数値化・解析しました。<br>実験の結果、色彩変化を決める重要的要因はアルカリの種類そのものではなく、溶液のpHであることが示されました[cite: 2]。また、色変化は単純な酸化型と還元型だけでは説明できず、その途中で生じる中間体が関与している可能性も示唆されています[cite: 2]。</p></details></div></article>
+<p>振とうや攪拌によって空気中の酸素が溶け込むと色素が酸化され、時間が経つとグルコースによって再び還元されます。この酸化と還元のバランスが変化することで、色が連続的に移り変わっていきます。<br>一般的な「信号反応」では緑→赤→黄という段階的な変化が見られますが、ゲーミング反応では色の境目がなめらかにつながり、鮮やかなグラデーションになります。私たちの研究では、この色変化を動画撮影し、Lab*色空間を用いて数値化・解析しました。<br>実験の結果、色彩変化を決める重要な要因はアルカリの種類そのものではなく、溶液のpHであることが示されました[cite: 2]。また、色変化は単純な酸化型と還元型だけでは説明できず、その途中で生じる中間体が関与している可能性も示唆されています[cite: 2]。</p></details></div></article>
 
 <!-- 実験 03 -->
 <article class="card experiment" data-tags="air energy liquid" data-search="液体窒素の銃 蒸発 低温 圧力 気体 膨張 液体 銃">
@@ -195,7 +197,59 @@
 
 <p><strong>主な結果：</strong> 色彩変化はLab*色空間上で連続的な軌跡として表現でき、主観的だった色の変化を定量的に記述することができた。また、発色挙動はアルカリ種よりもpHに強く依存しており、鮮やかなグラデーション形成には適切なpH条件の維持が重要であることが示された。さらに、観察された色彩変化は単純な二状態反応ではなく、中間体を伴う多段階反応であることが示唆された[cite: 2]。</p>
 
-<p><strong>研究の意義：</strong> 多くの演示実験は定性的な観察に留ことが多い。しかし本研究では動画解析と色空間解析を導入することで、色彩変化を客観的な数値として扱うことができた。この研究は酸化還元反応、有機色素、画像解析、データサイエンスを横断的に結び付ける試みであり、化学マジックを科学的研究へ発展させた事例である。また将来的には取得した色彩データと反応速度論を組み合わせることで、色変化の予測や他の発色反応系への応用も期待される[cite: 2]。</p>
+<p><strong>研究の意義：</strong> 多くの演示実験は定性的な観察に留まることが多い。しかし本研究では動画解析と色空間解析を導入することで、色彩変化を客観的な数値として扱うことができた。この研究は酸化還元反応、有機色素、画像解析、データサイエンスを横断的に結び付ける試みであり、化学マジックを科学的研究へ発展させた事例である。また将来的には取得した色彩データと反応速度論を組み合わせることで、色変化の予測や他の発色反応系への応用も期待される[cite: 2]。</p>
 </details></div></article>
 
-<article class="card"><div class="symbol">
+<article class="card"><div class="symbol">📊</div><span class="tag">解析原理 01</span><h3>なぜLab*色空間を使うのか</h3><p>一般的なデジタル画像はRGB（Red, Green, Blue）の3つの値によって色を表現している。しかしRGB値の変化量は、人間が感じる色の違いと必ずしも一致しない。</p><div class="details"><details><summary>詳細解説</summary><p>L*：明度（明るさ）<br>a*：緑 ⇔ 赤<br>b*：青 ⇔ 黄<br><br>を表すLab*色空間は、人間の視覚特性に近い形で色を数値化することができる。そのため、ゲーミング反応のような連続的な色変化を解析する際に有効である。</p></details></div></article>
+
+<article class="card"><div class="symbol">🎥</div><span class="tag">解析原理 02</span><h3>動画から色データを取り出す方法</h3><p>実験の様子を動画撮影した後、ffmpegを用いてフレームごとの静止画へ変換した。</p><div class="details"><details><summary>詳細解説</summary><p>その後Fiji（ImageJ）を用いて溶液部分のROI（関心領域）を設定し、各フレームの色データを取得した。<br><br>取得したRGB値をLab*色空間へ変換することで、「少し緑になった」「赤っぽくなった」といった主観的な観察を数値データとして比較できるようになった。</p></details></div></article>
+
+<article class="card"><div class="symbol">🧪</div><span class="tag">化学原理 01</span><h3>なぜ色が変わるのか</h3><p>物質の色は、分子がどの波長の光を吸収するかによって決まる。インジゴカルミンは酸化還元反応によって電子の状態が変化するため、吸収する光の種類も変化する。</p><div class="details"><details><summary>詳細解説</summary><p>その結果、私たちの目には異なる色として認識される。つまりゲーミング反応で観察される色彩変化は、電子の状態変化を視覚的に観察している現象である。</p></details></div></article>
+
+<article class="card"><div class="symbol">🔗</div><span class="tag">化学原理 02</span><h3>共役系と発色の関係</h3><p>有機色素の発色には共役系と呼ばれる構造が重要である。共役系とは電子が分子内を広く移動できる構造のことであり、その広がりによって吸収する光の波長が決まる。</p><div class="details"><details><summary>詳細解説</summary><p>インジゴカルミンでは酸化還元反応によって電子分布が変化するため、吸収波長も変化する。その結果として色が変化して観察される。</p></details></div></article>
+
+<article class="card"><div class="symbol">🌈</div><span class="tag">化学原理 03</span><h3>なぜグラデーションになるのか</h3><p>単純な反応であれば色は瞬間的に切り替わる。しかしゲーミング反応では青から緑、黄色、橙色、赤色へと滑らかな変化が観察される。</p><div class="details"><details><summary>詳細解説</summary><p>これは酸化型・還元型・反応中間体が同時に存在し、それぞれの存在比が時間とともに変化しているためであると考えられる。連続的な色彩変化は、反応系内部で起きている多段階反応を反映している可能性がある。</p></details></div></article>
+
+<article class="card"><div class="symbol">⚖️</div><span class="tag">化学原理 04</span><h3>pHが重要な理由</h3><p>本反応ではグルコースが還元剤として働く。しかし中性条件では反応性が低く、十分な色変化が起こらない。</p><div class="details"><details><summary>詳細解説</summary><p>塩基性条件下ではグルコースの還元作用が強くなり、インジゴカルミンの還元速度が大きく変化する。そのため、pHの違いが色変化の速度や発色パターンに大きな影響を与える。</p></details></div></article>
+
+<article class="card"><div class="symbol">🔄</div><span class="tag">化学原理 05</span><h3>可逆反応と動的平衡</h3><p>ゲーミング反応は可逆的な酸化還元反応である。</p><div class="details"><details><summary>詳細解説</summary><p>攪拌すると空気中の酸素が供給されるため酸化反応が進行し、静置するとグルコースによる還元反応が優勢になる。<br><br>溶液中では常に酸化反応と還元反応が同時に進行しており、その速度バランスが変化することで色彩も変化する。このような状態を動的平衡という。</p></details></div></article>
+
+</div></section>
+
+<section class="section" id="record"><div class="sectionhead"><h2>活動記録</h2><span>03 / FIELD NOTES</span></div><p class="intro">本番の実験だけでなく、準備や工夫、うまくいかなかったことも活動の大切な記録です。</p><div class="card"><div class="timeline"><div class="year">PREPARATION</div><div><h3>実験の準備</h3><p>器具・試薬の確認、役割分担、展示の設計、安全確認など。</p></div></div><div class="timeline"><div class="year">TEST</div><div><h3>予備実験・試行錯誤</h3><p>実験条件を確認し、想定した現象が起きるかを調べた記録。改善点や気づきを残します。</p></div></div><div class="timeline"><div class="year">EVENT</div><div><h3>化学マジック当日</h3><p>実演の様子、来場者の反応、うまくいった点、次回に向けた改善点。</p></div></div><div class="timeline"><div class="year">REFLECTION</div><div><h3>振り返り・引き継ぎ</h3><p>次の担当者に伝えたいこと、準備で困ったこと、参考資料など。</p></div></div></div></section>
+
+<section class="section" id="safety"><div class="sectionhead"><h2>安全について</h2><span>04 / SAFETY</span></div><div class="notice">このサイトは教育・解説・活動記録を目的としています。危険ですので絶対に真似しないようお願いいたします。</div></section>
+</main><footer><div class="wrap">CHEMISTRY LAB ARCHIVE · 化学マジックと創造工学の記録</div></footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const search = document.getElementById('search');
+  const cards = [...document.querySelectorAll('.experiment')];
+  const chips = [...document.querySelectorAll('.chip')];
+  let filter = 'all';
+
+  function update() {
+    if (!search) return;
+    const q = search.value.trim().toLowerCase();
+    let count = 0;
+    cards.forEach(card => {
+      const tags = card.dataset.tags ? card.dataset.tags.split(' ') : [];
+      const text = ((card.dataset.search || '') + ' ' + card.innerText).toLowerCase();
+      const show = (filter === 'all' || tags.includes(filter)) && (!q || text.includes(q));
+      card.style.display = show ? '' : 'none';
+      if (show) count++;
+    });
+    const emptyEl = document.getElementById('empty');
+    if (emptyEl) emptyEl.style.display = count ? 'none' : 'block';
+  }
+
+  if (search) search.addEventListener('input', update);
+  chips.forEach(chip => chip.addEventListener('click', () => {
+    filter = chip.dataset.filter;
+    chips.forEach(c => c.classList.toggle('active', c === chip));
+    update();
+  }));
+});
+</script>
+</body>
+</html>
