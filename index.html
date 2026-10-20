@@ -155,11 +155,11 @@
 
   <!-- 会場案内ボックス -->
   <div style="background: rgba(16, 37, 51, 0.6); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px; margin-bottom: 16px; color: var(--accent); font-weight: 700; font-size: 15px;">
-    📍 会場：生物応用化学科棟3F 第3合併講義室（入場無料・整理券配布有）
+    📍 会場：生物応用化学科棟3F 第3合併講義室（入場無料）
   </div>
 
   <!-- スケジュールリスト容器 -->
-  <div style="background: rgba(16, 37, 51, 0.4); border: 1px solid var(--line); border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 18px;">
+  <div style="background: rgba(16, 37, 51, 0.4); border: 1px solid var(--line); border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 18px; margin-bottom: 20px;">
     
     <!-- 10/31 第一部 -->
     <div style="display: grid; grid-template-columns: 100px 1fr; gap: 15px; align-items: baseline; padding-bottom: 16px; border-bottom: 1px solid rgba(41, 70, 84, 0.6);">
@@ -207,45 +207,37 @@
     </div>
 
   </div>
-</section>
 
-<!-- 化学マジックとは セクション -->
-<section class="section" id="about">
-  <div class="sectionhead"><h2>化学マジックとは</h2><span>02 / ABOUT CHEMICAL MAGIC</span></div>
-  <p class="intro">手品のように見える劇的な変化。そのすべてには科学的な理由（ロジック）が存在します。</p>
+  <!-- 整理券・入場ルールについての案内カード -->
+  <div class="card" style="background: linear-gradient(135deg, #102d3b, #0b1c28); border: 1px solid var(--accent); border-radius: 14px; padding: 22px;">
+    <h3 style="font-size: 18px; color: var(--gold); margin-top: 0; margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
+      🎟️ 整理券の配布情報とご入場について
+    </h3>
 
-  <div class="card" style="margin-bottom: 20px; background: linear-gradient(135deg, #133344, #102533);">
-    <h3 style="font-size: 22px; color: var(--accent); margin-top:0;">「種も仕掛けも、分子の世界にある」</h3>
-    <p style="font-size: 15px; line-height: 1.9;">
-      化学マジックとは、化学反応に伴う<strong>「色の急激な変化」「発光」「気体の膨張」「状態変化」</strong>などの現象を、ストーリー仕立てのエンターテインメントとして魅せる実験パフォーマンス劇です。<br>
-      一見すると奇跡や魔法のように思える現象も、分子の組み替えや電子の移動といった自然界の法則に基づいています。私たちは「わあ、すごい！」という驚きから一歩進んで、「なぜこうなるんだろう？」を追求する面白さを発信しています。
-    </p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-bottom: 16px;">
+      <div style="background: rgba(11, 28, 40, 0.7); border: 1px solid var(--line); border-radius: 10px; padding: 14px;">
+        <div style="color: var(--accent); font-weight: 700; font-size: 14px; margin-bottom: 6px;">📍 配布場所</div>
+        <div style="color: #fff; font-size: 15px; font-weight: 800;">MainStage横</div>
+      </div>
 
-    <div style="margin-top: 18px; padding-top: 15px; border-top: 1px solid var(--line);">
-      <h4 style="margin: 0 0 8px 0; color: var(--gold); font-size: 15px;">🎯 始まりの原点と私たちの想い</h4>
-      <p style="margin: 0; font-size: 14px; color: var(--muted); line-height: 1.8;">
-        高専祭に足を運んでくれる<strong>小中学生をはじめとする地域の皆さんに、化学の面白さを知ってもらう最高のきっかけにしたい</strong>——それがこの化学マジックの始まりの原点です。<br>
-        「科学って難しそう」というイメージを覆し、魅惑的な実験劇を通して化学の真の魅力を伝えることで、私たちが所属する<strong>生物応用化学科</strong>への興味や未来の科学者への一歩に繋がることを願って挑戦を続けています。
-      </p>
+      <div style="background: rgba(11, 28, 40, 0.7); border: 1px solid var(--line); border-radius: 10px; padding: 14px;">
+        <div style="color: var(--accent); font-weight: 700; font-size: 14px; margin-bottom: 6px;">⏰ 配布開始時間</div>
+        <div style="color: var(--text); font-size: 13px; line-height: 1.6;">
+          ・<strong>10/31 (土)：</strong>第一部 9:00〜 / 第二部 12:00〜<br>
+          ・<strong>11/01 (日)：</strong>第一部 9:00〜 / 最終公演 12:00〜
+        </div>
+      </div>
     </div>
-  </div>
 
-  <!-- 歴代公演テーマ -->
-  <div class="card" style="background: #0b1c28;">
-    <h4 style="margin: 0 0 12px 0; font-size: 15px; color: var(--accent); letter-spacing: 0.08em;">🎭 歴代公演テーマ (THEMES)</h4>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
-      <div style="background: var(--panel); padding: 12px 15px; border-radius: 10px; border: 1px solid var(--line);">
-        <span style="font-size: 11px; color: var(--muted); font-weight: bold; display: block;">2024年</span>
-        <strong style="color: var(--text); font-size: 15px;">名探偵ナナン</strong>
-      </div>
-      <div style="background: var(--panel); padding: 12px 15px; border-radius: 10px; border: 1px solid var(--line);">
-        <span style="font-size: 11px; color: var(--muted); font-weight: bold; display: block;">2025年</span>
-        <strong style="color: var(--text); font-size: 15px;">ちょっと変わったヘンゼルとグレーテル</strong>
-      </div>
-      <div style="background: #133242; padding: 12px 15px; border-radius: 10px; border: 1px solid var(--accent);">
-        <span style="font-size: 11px; color: var(--accent); font-weight: bold; display: block;">2026年（今年度）</span>
-        <strong style="color: var(--gold); font-size: 15px;">化学の城ラピュタ 🏰</strong>
-      </div>
+    <div style="border-top: 1px dashed var(--line); padding-top: 14px;">
+      <div style="font-weight: 700; color: var(--accent); font-size: 13px; margin-bottom: 8px;">⚠️ ご観覧・ご入場の注意事項</div>
+      <ul style="margin: 0; padding-left: 20px; color: var(--muted); font-size: 13px; line-height: 1.8;">
+        <li>整理券をお持ちの方は、<strong style="color: var(--text);">座ってご観覧</strong>いただけます。</li>
+        <li>整理券の番号と座席番号は<strong style="color: var(--text);">対応していません</strong>。</li>
+        <li>整理券を受け取った方は、<strong style="color: var(--text);">開場10分前までに配布場所と同じ場所</strong>にお越しいただき、順番にお並びください。</li>
+        <li>整理券をお持ちの方の中で、<strong style="color: var(--text);">お並びいただいた順に入場</strong>となります。</li>
+        <li><strong style="color: var(--red);">開場5分前までに</strong>お越しいただけない場合は、整理券は<strong style="color: var(--red);">無効</strong>となります。</li>
+      </ul>
     </div>
   </div>
 </section>
