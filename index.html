@@ -1,501 +1,985 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#0b1724">
-<title>化学マジック2026 | 化学の城ラピュタ</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b1724">
+<title>化学マジック2026 - 化学の城ラピュタ</title>
 <style>
-:root{--bg:#091722;--panel:#102533;--panel2:#132d3b;--line:#294654;--text:#eaf3f6;--muted:#aac0ca;--accent:#71ddd1;--gold:#e4c27b;--red:#ef9a91}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:80px}body{margin:0;background:radial-gradient(ellipse at 80% 0%,#123244 0,transparent 38%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;line-height:1.8}a{color:var(--accent)}.wrap{width:min(1080px,calc(100% - 36px));margin:auto}header{position:sticky;top:0;z-index:10;background:#091722ed;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.1em;font-size:14px}.mark{display:grid;place-items:center;width:42px;height:42px;border:1px solid #3c7780;border-radius:12px;color:var(--accent);font-size:23px}.sub{display:block;color:var(--muted);font-size:9px;letter-spacing:.17em;font-weight:500}.navlinks{display:flex;gap:20px;flex-wrap:wrap}.navlinks a{text-decoration:none;color:var(--muted);font-size:12px}.navlinks a:hover{color:var(--accent)}.hero{padding:76px 0 34px}.eyebrow,.tag,.num{font-size:11px;letter-spacing:.17em;color:var(--accent);font-weight:750}.hero h1{font-size:clamp(32px,6vw,58px);line-height:1.25;letter-spacing:.02em;margin:14px 0 20px}.lead{max-width:720px;color:var(--muted);font-size:16px}.hero-panel{margin-top:30px;padding:25px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(115deg,#133d4f,#102533 70%);display:flex;align-items:center;justify-content:space-between;gap:20px}.hero-panel p{margin:0;max-width:690px}.orb{flex:none;width:84px;height:84px;border:1px solid #3e858a;border-radius:50%;display:grid;place-items:center;font-size:38px;color:var(--accent);box-shadow:0 0 40px #71ddd11a}.section{padding:32px 0}.sectionhead{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:20px}.sectionhead h2{margin:0;font-size:24px}.sectionhead span{font-size:10px;letter-spacing:.16em;color:var(--accent)}.intro{color:var(--muted);margin-top:-7px;margin-bottom:20px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.card{border:1px solid var(--line);background:linear-gradient(155deg,#122b39,#0f222f);border-radius:15px;padding:21px;min-width:0}.card h3{font-size:18px;margin:4px 0 8px}.card p{color:var(--muted);font-size:14px;margin:8px 0}.tag{display:inline-block;border:1px solid #365b68;border-radius:999px;padding:2px 9px;font-size:10px;letter-spacing:.08em;margin-right:4px;margin-bottom:4px}.symbol{width:45px;height:45px;display:grid;place-items:center;border-radius:12px;background:#1b3a47;color:var(--accent);font-size:24px;margin-bottom:14px}.meta{color:var(--muted);font-size:12px}.details{margin-top:13px;border-top:1px solid var(--line);padding-top:10px}.details summary{cursor:pointer;color:var(--accent);font-size:13px;font-weight:650}.details p,.details div{margin-top:10px;font-size:14px}.notice{border:1px solid #69583a;background:#28251e;color:#eadbb9;border-radius:12px;padding:15px 17px;font-size:13px}.timeline{display:grid;grid-template-columns:110px 1fr;gap:15px;padding:16px 0;border-bottom:1px solid var(--line)}.timeline:last-child{border:0}.year{color:var(--accent);font-size:12px;font-weight:750;letter-spacing:.08em}.timeline h3{font-size:16px;margin:0 0 3px}.timeline p{margin:0;color:var(--muted);font-size:14px}.chips{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.chip{border:1px solid var(--line);background:#102633;color:var(--muted);border-radius:999px;padding:5px 12px;font-size:12px;cursor:pointer}.chip.active,.chip:hover{border-color:var(--accent);color:var(--accent)}.search{width:100%;padding:12px 14px;background:#0b1c28;border:1px solid var(--line);border-radius:10px;color:var(--text);font:inherit;margin-bottom:15px}.search:focus{outline:1px solid var(--accent)}.empty{display:none;color:var(--muted);padding:15px}.foot{margin-top:45px;border-top:1px solid var(--line);padding:27px 0 40px;color:var(--muted);font-size:12px}.small{font-size:12px;color:var(--muted)}
+:root {
+  --bg: #091722;
+  --panel: #102533;
+  --panel2: #132d3b;
+  --line: #294654;
+  --text: #eaf3f6;
+  --muted: #aac0ca;
+  --accent: #71ddd1;
+  --gold: #e4c27b;
+  --red: #ef9a91;
+}
 
-/* カウントダウン用スタイル */
-.countdown-box{background:linear-gradient(135deg,#163c4e,#0e2634);border:1px solid var(--accent);border-radius:12px;padding:14px 20px;margin-top:20px;display:flex;align-items:center;justify-content:space-between;gap:15px}
-.countdown-timer{font-size:20px;font-weight:800;color:var(--gold);letter-spacing:0.05em;font-family:monospace}
+* {
+  box-sizing: border-box;
+}
 
-/* YouTube Shorts 埋め込みプレイヤー用スタイル (上下の無駄な黒帯余白を解消) */
-.video-embed-container{position:relative;width:100%;max-width:300px;aspect-ratio:9/16;max-height:520px;margin:15px auto;overflow:hidden;border-radius:14px;border:1px solid var(--line);background:#000;box-shadow:0 8px 24px rgba(0,0,0,0.4)}
-.video-embed-container iframe{width:100%;height:100%;border:none;display:block}
+html {
+  scroll-behavior: smooth;
+}
 
-/* 著作権引用用画像スタイル */
-.figure-citation{margin:18px 0;text-align:center;background:#0b1c28;padding:12px;border-radius:10px;border:1px solid var(--line)}
-.svg-wrapper{background:#ffffff;padding:14px;border-radius:8px;display:inline-block;width:100%;max-width:520px;box-shadow:0 2px 8px rgba(0,0,0,0.3)}
-.svg-wrapper svg{width:100%;height:auto;display:block;margin:0 auto}
-.exp-img-caption{font-size:11px;color:var(--muted);margin-top:8px;line-height:1.5;text-align:left}
-.exp-img-caption a{color:var(--accent);text-decoration:underline}
+body {
+  margin: 0;
+  background: radial-gradient(ellipse at 80% 0%, #123244 0%, transparent 38%), var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+  line-height: 1.8;
+}
 
-@media(max-width:720px){.nav{align-items:flex-start;padding:12px 0;flex-direction:column}.navlinks{gap:13px}.hero{padding-top:48px}.grid3{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-panel{padding:20px}.orb{width:60px;height:60px;font-size:28px}.countdown-box{flex-direction:column;align-items:flex-start;gap:6px}}@media(max-width:520px){.grid,.grid3{grid-template-columns:1fr}.timeline{grid-template-columns:1fr;gap:2px}.hero-panel{align-items:flex-start}.orb{display:none}.sectionhead h2{font-size:21px}}
+a {
+  color: var(--accent);
+}
+
+.wrap {
+  width: min(1080px, calc(100% - 36px));
+  margin: auto;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(9, 23, 34, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  font-size: 14px;
+  text-decoration: none;
+  color: var(--text);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.mark {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #3c7780;
+  border-radius: 12px;
+  color: var(--accent);
+  font-size: 22px;
+  background: rgba(113, 221, 207, 0.05);
+}
+
+.sub {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  font-weight: 500;
+}
+
+.navlinks {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.navlinks a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  display: inline-block;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.navlinks a:hover, .navlinks a.active {
+  color: var(--accent);
+  background: rgba(113, 221, 207, 0.12);
+}
+
+.hero {
+  padding: 40px 0 20px;
+}
+
+.eyebrow, .tag {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  font-weight: 700;
+  border-radius: 6px;
+}
+
+.hero h1 {
+  font-size: clamp(30px, 6vw, 52px);
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+  margin: 14px 0 16px;
+}
+
+.lead {
+  max-width: 720px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.section {
+  padding: 32px 0;
+}
+
+.sectionhead {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+
+.sectionhead h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.sectionhead span {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+}
+
+.card {
+  border: 1px solid var(--line);
+  background: linear-gradient(155deg, #122b39, #0f222f);
+  border-radius: 15px;
+  padding: 22px;
+  margin-bottom: 20px;
+}
+
+.intro {
+  color: var(--muted);
+  margin-top: -7px;
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.card h3 {
+  font-size: 18px;
+  margin: 4px 0 8px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+.tag-badge {
+  display: inline-block;
+  border: 1px solid #365b68;
+  border-radius: 999px;
+  padding: 2px 9px;
+  font-size: 10px;
+  letter-spacing: .08em;
+  margin-right: 4px;
+  margin-bottom: 4px;
+}
+
+.symbol {
+  width: 45px;
+  height: 45px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #1b3a47;
+  color: var(--accent);
+  font-size: 24px;
+  margin-bottom: 14px;
+}
+
+.details summary {
+  cursor: pointer;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.details p, .details div {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 14px 0;
+}
+
+.chip {
+  border: 1px solid var(--line);
+  background: #102633;
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 5px 12px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.chip.active, .chip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.search {
+  width: 100%;
+  padding: 12px 14px;
+  background: #0b1c28;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--text);
+  font: inherit;
+  margin-bottom: 15px;
+}
+
+.search:focus {
+  outline: 1px solid var(--accent);
+}
+
+.empty {
+  display: none;
+  color: var(--muted);
+  padding: 15px;
+}
+
+.figure-citation {
+  margin: 18px 0;
+  text-align: center;
+  background: #0b1c28;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+}
+
+.svg-wrapper {
+  background: #ffffff;
+  padding: 14px;
+  border-radius: 8px;
+  display: inline-block;
+  width: 100%;
+  max-width: 520px;
+}
+
+.svg-wrapper svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.exp-img-caption {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 8px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.video-embed-container {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 9/16;
+  max-height: 520px;
+  margin: 15px auto;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: #000;
+}
+
+.video-embed-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.notice {
+  border: 1px solid #69583a;
+  background: #28251e;
+  color: #eadbb9;
+  border-radius: 12px;
+  padding: 20px;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.foot {
+  margin-top: 45px;
+  border-top: 1px solid var(--line);
+  padding: 27px 0 40px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+@media (max-width: 720px) {
+  .nav {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .navlinks {
+    width: 100%;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+}
+
+@media (max-width: 520px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
 </head>
 <body>
-<header><div class="wrap nav"><a href="#top" class="brand" style="text-decoration:none;color:inherit"><span class="mark">⚗</span><span>化学マジック2026<span class="sub">化学の城ラピュタ</span></span></a><nav class="navlinks"><a href="#about">化学マジックとは</a><a href="#schedule">公演情報</a><a href="#magic">実験図鑑</a><a href="#creative">創造工学</a><a href="#safety">安全について</a></nav></div></header>
 
-<main class="wrap" id="top">
-<section class="hero">
-  <div class="eyebrow">SCIENCE × WONDER × MAKING</div>
-  <h1>不思議を、<br>化学で読み解く。</h1>
-  <p class="lead">化学マジックの舞台裏から、授業での研究・試行錯誤まで。実験で見つけた発見や、そこにたどり着くまでの記録をまとめたアーカイブです。</p>
+<header>
+  <div class="wrap nav">
+    <a onclick="switchPage('index')" class="brand">
+      <span class="mark">⚗</span>
+      <span>化学マジック2026<span class="sub">化学の城ラピュタ</span></span>
+    </a>
+    <nav class="navlinks">
+      <a id="nav-index" onclick="switchPage('index')" class="active">TOP</a>
+      <a id="nav-schedule" onclick="switchPage('schedule')">公演情報</a>
+      <a id="nav-experiments" onclick="switchPage('experiments')">実験図鑑</a>
+      <a id="nav-creative" onclick="switchPage('creative')">創造工学</a>
+      <a id="nav-safety" onclick="switchPage('safety')">安全について</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- ヒーローヘッダー内のイベント案内カード -->
-  <div class="card" style="margin-top: 30px; padding: 28px; border: 1px solid var(--line); border-radius: 16px; background: rgba(16, 37, 51, 0.75); backdrop-filter: blur(8px);">
-    <div style="margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
-      <span style="display: inline-block; padding: 4px 12px; background: rgba(113, 221, 207, 0.12); border: 1px solid #2a5a58; color: var(--accent); border-radius: 999px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em;">第61回 鈴鹿高専祭 開催情報</span>
-      <span style="font-size: 12px; color: var(--muted);">テーマ：<strong style="color: var(--accent);">「collage」</strong></span>
+<main class="wrap">
+
+<!-- PAGE: TOP -->
+<div id="page-index" class="page-content">
+  <section class="hero">
+    <div class="eyebrow">SCIENCE × WONDER × MAKING</div>
+    <h1>不思議を、<br>化学で読み解く。</h1>
+    <p class="lead">化学マジックの舞台裏から、授業での研究・試行錯誤まで。実験で見つけた発見や、そこにたどり着くまでの記録をまとめたアーカイブです。</p>
+
+    <!-- ヒーローヘッダー内のイベント＆カウントダウン案内カード -->
+  <div class="card" style="margin-top: 24px; background: rgba(16, 37, 51, 0.85); border: 1px solid var(--accent);">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
+      <span class="tag" style="background: rgba(113, 221, 207, 0.15); color: var(--accent); padding: 4px 10px;">開催情報</span>
+      <span style="font-size: 13px; color: var(--muted);">高専祭テーマ：「collage」</span>
     </div>
 
-    <h3 style="font-size: 24px; font-weight: 800; color: #ffffff; margin: 0 0 16px 0; border-bottom: 2px solid var(--accent); padding-bottom: 8px; display: inline-block;">
-      <a href="https://www.snct-fes.info/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
-        第61回 鈴鹿高専祭「collage」
-      </a>
-    </h3>
-
-    <!-- 開催日時・時間 -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-bottom: 20px;">
-      <div style="background: rgba(11, 28, 40, 0.85); border: 1px solid var(--line); border-radius: 12px; padding: 16px;">
-        <div style="font-weight: 800; color: var(--accent); font-size: 15px; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
-          📅 1日目：10/31 (土)
+    <!-- 外部リンク（洗練されたスタイリッシュなカードリンク） -->
+    <a href="https://www.snct-fes.info/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; display: block; margin-bottom: 16px; group">
+      <div style="background: rgba(113, 221, 207, 0.05); border: 1px solid rgba(113, 221, 207, 0.3); border-radius: 10px; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; transition: all 0.25 ease;">
+        <div>
+          <div style="font-size: 11px; color: var(--accent); font-weight: 700; letter-spacing: 0.1em; margin-bottom: 2px;">OFFICIAL FESTIVAL SITE</div>
+          <div style="font-size: 17px; font-weight: 800; color: #fff;">第61回 鈴鹿高専祭「collage」</div>
         </div>
-        <div style="color: #fff; font-size: 16px; font-weight: 700;">
-          9:00 〜 16:00
-        </div>
-        <div style="color: var(--muted); font-size: 12px; margin-top: 4px;">
-          ※出店・学科展示・各種イベント開催
+        <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(113, 221, 207, 0.15); display: flex; align-items: center; justify-content: center; color: var(--accent); font-size: 14px; flex-shrink: 0; margin-left: 12px;">
+          ↗
         </div>
       </div>
+    </a>
 
-      <div style="background: rgba(11, 28, 40, 0.85); border: 1px solid var(--line); border-radius: 12px; padding: 16px;">
-        <div style="font-weight: 800; color: var(--accent); font-size: 15px; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
-          📅 2日目：11/01 (日)
-        </div>
-        <div style="color: #fff; font-size: 16px; font-weight: 700;">
-          9:00 〜 15:30
-        </div>
-        <div style="color: var(--muted); font-size: 12px; margin-top: 4px;">
-          ※各種イベント＆フィナーレ
-        </div>
+    <!-- 日程・高専祭開催時間 -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-bottom: 18px;">
+      <div style="background: var(--panel); padding: 14px; border-radius: 10px; border: 1px solid var(--line);">
+        <strong style="color: var(--accent); font-size: 15px; display: block; margin-bottom: 4px;">📅 1日目：10/31 (土)</strong>
+        <div style="font-size: 18px; font-weight: 800; color: #fff;">9:00 〜 16:00</div>
+        <div style="font-size: 12px; color: var(--muted); margin-top: 4px;">※出店・学科展示・各種イベント開催</div>
       </div>
+      <div style="background: var(--panel); padding: 14px; border-radius: 10px; border: 1px solid var(--line);">
+        <strong style="color: var(--accent); font-size: 15px; display: block; margin-bottom: 4px;">📅 2日目：11/01 (日)</strong>
+        <div style="font-size: 18px; font-weight: 800; color: #fff;">9:00 〜 15:30</div>
+        <div style="font-size: 12px; color: var(--muted); margin-top: 4px;">※各種イベント＆フィナーレ</div>
+      </div>
+    </div>
+
+    <!-- 2026年公演テーマ情報 ＆ 公演情報ボタン -->
+    <div style="background: rgba(228, 194, 123, 0.08); border: 1px solid rgba(228, 194, 123, 0.25); border-left: 4px solid var(--gold); padding: 16px; border-radius: 10px; margin-bottom: 18px;">
+      <strong style="color: var(--gold); font-size: 16px; display: block; margin-bottom: 6px;">🏰 2026年度 公演テーマ『化学の城ラピュタ』</strong>
+      <p style="margin: 0 0 14px 0; font-size: 13px; color: var(--text); line-height: 1.7;">
+        名作の世界観に着想を得て、化学の仕掛けとストーリーを組みあわせた実験劇。鮮やかな色変化や幻想的な発光現象など、一瞬も目が離せない演出を化学の魅力とともにお届けします！
+      </p>
+      
+      <!-- 化学の城ラピュタの直下に配置した詳細ボタン -->
+      <button onclick="switchPage('schedule')" style="width: 100%; background: linear-gradient(135deg, var(--accent), #3ca295); color: #091722; border: none; padding: 11px 20px; border-radius: 8px; font-weight: 800; font-size: 14px; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 4px 12px rgba(113, 221, 207, 0.25); display: flex; align-items: center; justify-content: center; gap: 8px;">
+        <span>📅 公演時間・整理券情報を詳しく見る</span>
+        <span style="font-size: 16px;">➔</span>
+      </button>
     </div>
 
     <!-- アクセス情報 -->
-    <div style="background: rgba(11, 28, 40, 0.6); border: 1px solid var(--line); border-radius: 12px; padding: 18px; margin-bottom: 20px;">
-      <div style="font-weight: 800; color: var(--gold); font-size: 14px; margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
-        📍 アクセス・指定駐車場のご案内（会場：鈴鹿工業高等専門学校）
-      </div>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; font-size: 13px; color: var(--muted); line-height: 1.6;">
+    <div style="background: rgba(11, 28, 40, 0.7); padding: 16px; border-radius: 10px; border: 1px solid var(--line); font-size: 13px; line-height: 1.8; margin-bottom: 18px;">
+      <strong style="color: var(--gold); font-size: 14px; display: block; margin-bottom: 6px;">📍 アクセス・指定駐車場のご案内（会場：鈴鹿工業高等専門学校）</strong>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin-top: 8px;">
         <div>
           <strong style="color: var(--text);">🚌 バスでお越しの方：</strong><br>
-          近鉄「白子駅西口」より三重交通バス（平田町駅行 / 鈴鹿サーキット行）乗車 ➔ <strong>「東旭が丘3丁目」</strong>下車 徒歩約8分
+          近鉄「白子駅西口」より三重交通バス（平田町駅行 / 鈴鹿サーキット行）乗車 ➔ 「東旭が丘3丁目」下車 徒歩約8分
         </div>
         <div>
           <strong style="color: var(--text);">🚗 車でお越しの方（指定駐車場）：</strong><br>
-          ・<strong>第一駐車場（メイン）：</strong>鈴鹿医療科学大学 白子キャンパス<br>
-          ・<strong>第三駐車場（予備）：</strong>MEGAドン・キホーテUNY鈴鹿店（3F〜7F）<br>
-          <span style="font-size: 11px; color: var(--accent);">※第二駐車場はワークショップ専用・予約制です</span>
+          ・<strong>第一駐車場（メイン）：</strong> 鈴鹿医療科学大学 白子キャンパス<br>
+          ・<strong>第三駐車場（予備）：</strong> MEGAドン・キホーテUNY鈴鹿店（3F〜7F）<br>
+          <span style="color: var(--muted); font-size: 11px;">※第二駐車場はワークショップ専用・予約制です</span>
         </div>
       </div>
-      <div style="margin-top: 10px; padding-top: 8px; border-top: 1px dashed var(--line); font-size: 11px; color: var(--red);">
-        ⚠️ 学校前および周辺住宅地での送迎・乗降は厳禁です。近隣の病院等の駐車場には絶対に駐車しないよう、必ず公式の指定駐車場をご利用ください。
+
+      <div style="margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--line); color: var(--red); font-size: 12px;">
+        ⚠️ 学校前および周辺住宅地での送迎・乗降は厳禁です。近隣の病院等の駐車場には絶対に駐車しないよう、必ず指定駐車場をご利用ください。
       </div>
     </div>
 
     <!-- カウントダウン -->
-    <div style="background: rgba(11, 28, 40, 0.9); border: 1px solid var(--line); border-radius: 12px; padding: 16px; text-align: center;">
-      <div style="font-size: 12px; color: var(--muted); margin-bottom: 4px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+    <div style="background: rgba(11, 28, 40, 0.9); border: 1px solid var(--accent); border-radius: 12px; padding: 18px; text-align: center;">
+      <div style="font-size: 12px; color: var(--muted); margin-bottom: 6px;">
         ⏳ 第61回 鈴鹿高専祭「collage」開幕まで
       </div>
-      <div id="schedule-countdown" style="font-size: 22px; font-weight: 800; color: var(--accent); font-family: monospace; letter-spacing: 0.05em;">
+      <div id="schedule-countdown" style="font-size: 24px; font-weight: 800; color: var(--accent); font-family: monospace; letter-spacing: 0.05em;">
         計算中...
       </div>
     </div>
   </div>
 </section>
 
-<!-- 化学マジックとは セクション -->
-<section class="section" id="about">
-  <div class="sectionhead"><h2>化学マジックとは</h2><span>01 / ABOUT CHEMICAL MAGIC</span></div>
-  <p class="intro">手品のように見える劇的な変化。そのすべてには科学的な理由（ロジック）が存在します。</p>
-
-  <div class="card" style="margin-bottom: 20px; background: linear-gradient(135deg, #133344, #102533);">
-    <h3 style="font-size: 22px; color: var(--accent); margin-top:0;">「種も仕掛けも、分子の世界にある」</h3>
-    <p style="font-size: 15px; line-height: 1.9;">
-      化学マジックとは、化学反応に伴う<strong>「色の急激な変化」「発光」「気体の膨張」「状態変化」</strong>などの現象を、ストーリー仕立てのエンターテインメントとして魅せる実験パフォーマンス劇です。<br>
-      一見すると奇跡や魔法のように思える現象も、分子の組み替えや電子の移動といった自然界の法則に基づいています。私たちは「わあ、すごい！」という驚きから一歩進んで、「なぜこうなるんだろう？」を追求する面白さを発信しています。
-    </p>
-
-    <div style="margin-top: 18px; padding-top: 15px; border-top: 1px solid var(--line);">
-      <h4 style="margin: 0 0 8px 0; color: var(--gold); font-size: 15px;">🎯 始まりの原点と私たちの想い</h4>
-      <p style="margin: 0; font-size: 14px; color: var(--muted); line-height: 1.8;">
-        高専祭に足を運んでくれる<strong>小中学生をはじめとする地域の皆さんに、化学の面白さを知ってもらう最高のきっかけにしたい</strong>——それがこの化学マジックの始まりの原点です。<br>
-        「科学って難しそう」というイメージを覆し、魅惑的な実験劇を通して化学の真の魅力を伝えることで、私たちが所属する<strong>生物応用化学科</strong>への興味や未来の科学者への一歩に繋がることを願って挑戦を続けています。
-      </p>
-    </div>
-  </div>
-
-  <!-- 歴代公演テーマ -->
-  <div class="card" style="background: #0b1c28;">
-    <h4 style="margin: 0 0 12px 0; font-size: 15px; color: var(--accent); letter-spacing: 0.08em;">🎭 歴代公演テーマ (THEMES)</h4>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
-      <div style="background: var(--panel); padding: 12px 15px; border-radius: 10px; border: 1px solid var(--line);">
-        <span style="font-size: 11px; color: var(--muted); font-weight: bold; display: block;">2024年</span>
-        <strong style="color: var(--text); font-size: 15px;">名探偵ナナン</strong>
-      </div>
-      <div style="background: var(--panel); padding: 12px 15px; border-radius: 10px; border: 1px solid var(--line);">
-        <span style="font-size: 11px; color: var(--muted); font-weight: bold; display: block;">2025年</span>
-        <strong style="color: var(--text); font-size: 15px;">ちょっと変わったヘンゼルとグレーテル</strong>
-      </div>
-      <div style="background: #133242; padding: 12px 15px; border-radius: 10px; border: 1px solid var(--accent);">
-        <span style="font-size: 11px; color: var(--accent); font-weight: bold; display: block;">2026年（今年度）</span>
-        <strong style="color: var(--gold); font-size: 15px;">化学の城ラピュタ 🏰</strong>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 公演情報セクション（詳細・シンプルリストデザイン） -->
-<section class="section" id="schedule">
-  <div class="sectionhead"><h2>公演情報</h2><span>02 / EVENT SCHEDULE</span></div>
-  <p class="intro">第61回鈴鹿高専祭「collage」における化学マジック公演スケジュール詳細です。</p>
-
-  <!-- 会場案内ボックス -->
-  <div style="background: rgba(16, 37, 51, 0.6); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px; margin-bottom: 16px; color: var(--accent); font-weight: 700; font-size: 15px;">
-    📍 会場：生物応用化学科棟3F 第3合併講義室（入場無料）
-  </div>
-
-  <!-- スケジュールリスト容器 -->
-  <div style="background: rgba(16, 37, 51, 0.4); border: 1px solid var(--line); border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 18px; margin-bottom: 20px;">
+  <!-- 化学マジックとは -->
+  <section class="section" id="top-about-section">
+    <div class="sectionhead"><h2>化学マジックとは</h2><span>ABOUT CHEMICAL MAGIC</span></div>
     
-    <!-- 10/31 第一部 -->
-    <div style="display: grid; grid-template-columns: 100px 1fr; gap: 15px; align-items: baseline; padding-bottom: 16px; border-bottom: 1px solid rgba(41, 70, 84, 0.6);">
-      <div style="font-weight: 800; color: var(--accent); font-size: 15px;">10/31 (土)</div>
-      <div>
-        <div style="font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 4px;">
-          第一部 <span style="font-size: 13px; font-weight: 500; color: var(--accent);">（劇中の体験会有り）</span>
-        </div>
-        <div style="color: var(--muted); font-size: 14px;">開場 10:30 ／ 開演 11:00</div>
+    <div class="card" style="background: linear-gradient(135deg, #133344, #102533);">
+      <h3 style="font-size: 22px; color: var(--accent); margin-top:0;">「種も仕掛けも、分子の世界にある」</h3>
+      <p style="font-size: 15px; line-height: 1.9;">
+        化学マジックとは、化学反応に伴う<strong>「色の急激な変化」「発光」「気体の膨張」「状態変化」</strong>などの現象を、ストーリー仕立てのエンターテインメントとして魅せる実験パフォーマンス劇です。<br>
+        一見すると奇跡や魔法のように思える現象も、分子の組み替えや電子の移動といった自然界の法則に基づいています。私たちは「わあ、すごい！」という驚きから一歩進んで、「なぜこうなるんだろう？」を追求する面白さを発信しています。
+      </p>
+
+      <div style="margin-top: 18px; padding-top: 15px; border-top: 1px solid var(--line);">
+        <h4 style="margin: 0 0 8px 0; color: var(--gold); font-size: 15px;">🎯 始まりの原点と私たちの想い</h4>
+        <p style="margin: 0; font-size: 14px; color: var(--muted); line-height: 1.8;">
+          高専祭に足を運んでくれる<strong>小中学生をはじめとする地域の皆さんに、化学の面白さを知ってもらう最高のきっかけにしたい</strong>——それがこの化学マジックの始まりの原点です。<br>
+          「科学って難しそう」というイメージを覆し、魅惑的な実験劇を通して化学の真の魅力を伝えることで、私たちが所属する<strong>生物応用化学科</strong>への興味や未来の科学者への一歩に繋がることを願って挑戦を続けています。
+        </p>
       </div>
     </div>
 
-    <!-- 10/31 第二部 -->
-    <div style="display: grid; grid-template-columns: 100px 1fr; gap: 15px; align-items: baseline; padding-bottom: 16px; border-bottom: 1px solid rgba(41, 70, 84, 0.6);">
-      <div style="font-weight: 800; color: var(--accent); font-size: 15px;">10/31 (土)</div>
-      <div>
-        <div style="font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 4px;">
-          第二部 <span style="font-size: 13px; font-weight: 500; color: var(--accent);">（劇中の体験会有り）</span>
+    <!-- 歴代公演テーマ -->
+    <div class="card" style="background: #0b1c28;">
+      <h4 style="margin: 0 0 12px 0; font-size: 15px; color: var(--accent); letter-spacing: 0.08em;">🎭 歴代公演テーマ (THEMES)</h4>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
+        <div style="background: var(--panel); padding: 12px 15px; border-radius: 10px; border: 1px solid var(--line);">
+          <span style="font-size: 11px; color: var(--muted); font-weight: bold; display: block;">2024年</span>
+          <strong style="color: var(--text); font-size: 15px;">名探偵ナナン</strong>
         </div>
-        <div style="color: var(--muted); font-size: 14px;">開場 13:00 ／ 開演 13:30</div>
-      </div>
-    </div>
-
-    <!-- 11/01 第一部 -->
-    <div style="display: grid; grid-template-columns: 100px 1fr; gap: 15px; align-items: baseline; padding-bottom: 16px; border-bottom: 1px solid rgba(41, 70, 84, 0.6);">
-      <div style="font-weight: 800; color: var(--accent); font-size: 15px;">11/01 (日)</div>
-      <div>
-        <div style="font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 4px;">
-          第一部 <span style="font-size: 13px; font-weight: 500; color: var(--accent);">（劇中の体験会有り）</span>
+        <div style="background: var(--panel); padding: 12px 15px; border-radius: 10px; border: 1px solid var(--line);">
+          <span style="font-size: 11px; color: var(--muted); font-weight: bold; display: block;">2025年</span>
+          <strong style="color: var(--text); font-size: 15px;">ちょっと変わったヘンゼルとグレーテル</strong>
         </div>
-        <div style="color: var(--muted); font-size: 14px;">開場 10:30 ／ 開演 11:00</div>
-      </div>
-    </div>
-
-    <!-- 11/01 最終公演（特別枠デザイン） -->
-    <div style="background: rgba(19, 45, 59, 0.6); border: 1px solid #3d6359; border-left: 3px solid var(--gold); border-radius: 10px; padding: 16px 20px; display: grid; grid-template-columns: 100px 1fr; gap: 15px; align-items: baseline;">
-      <div style="font-weight: 800; color: var(--gold); font-size: 15px;">11/01 (日)</div>
-      <div>
-        <div style="font-size: 16px; font-weight: 800; color: var(--gold); margin-bottom: 4px; display: flex; align-items: center; gap: 6px;">
-          🌟 最終公演
-        </div>
-        <div style="color: #fff; font-weight: 700; font-size: 15px;">開場 12:40 ／ 開演 13:10</div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- 整理券・入場ルールについての案内カード -->
-  <div class="card" style="background: linear-gradient(135deg, #102d3b, #0b1c28); border: 1px solid var(--accent); border-radius: 14px; padding: 22px;">
-    <h3 style="font-size: 18px; color: var(--gold); margin-top: 0; margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
-      🎟️ 整理券の配布情報とご入場について
-    </h3>
-
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-bottom: 16px;">
-      <div style="background: rgba(11, 28, 40, 0.7); border: 1px solid var(--line); border-radius: 10px; padding: 14px;">
-        <div style="color: var(--accent); font-weight: 700; font-size: 14px; margin-bottom: 6px;">📍 配布場所</div>
-        <div style="color: #fff; font-size: 15px; font-weight: 800;">MainStage横</div>
-        <div style="margin-top: 6px; font-size: 12px;">
-          <a href="https://www.snct-fes.info/map/" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">
-            map詳細はこちら(高専祭公式サイトへ遷移します)
-          </a>
-        </div>
-      </div>
-
-      <div style="background: rgba(11, 28, 40, 0.7); border: 1px solid var(--line); border-radius: 10px; padding: 14px;">
-        <div style="color: var(--accent); font-weight: 700; font-size: 14px; margin-bottom: 6px;">⏰ 配布開始時間</div>
-        <div style="color: var(--text); font-size: 13px; line-height: 1.6;">
-          ・<strong>10/31 (土)：</strong>第一部 9:00〜 / 第二部 12:00〜<br>
-          ・<strong>11/01 (日)：</strong>第一部 9:00〜 / 最終公演 12:00〜
+        <div style="background: #133242; padding: 12px 15px; border-radius: 10px; border: 1px solid var(--accent);">
+          <span style="font-size: 11px; color: var(--accent); font-weight: bold; display: block;">2026年（今年度）</span>
+          <strong style="color: var(--gold); font-size: 15px;">化学の城ラピュタ 🏰</strong>
         </div>
       </div>
     </div>
-
-    <div style="border-top: 1px dashed var(--line); padding-top: 14px;">
-      <div style="font-weight: 700; color: var(--accent); font-size: 13px; margin-bottom: 8px;">⚠️ ご観覧・ご入場の注意事項</div>
-      <ul style="margin: 0; padding-left: 20px; color: var(--muted); font-size: 13px; line-height: 1.8;">
-        <li>整理券をお持ちの方は、<strong style="color: var(--text);">座ってご観覧</strong>いただけます。</li>
-        <li>整理券の番号と座席番号は<strong style="color: var(--text);">対応していません</strong>。</li>
-        <li>整理券を受け取った方は、<strong style="color: var(--text);">開場10分前までに配布場所と同じ場所</strong>にお越しいただき、順番にお並びください。</li>
-        <li>整理券をお持ちの方の中で、<strong style="color: var(--text);">お並びいただいた順に入場</strong>となります。</li>
-        <li><strong style="color: var(--red);">開場5分前までに</strong>お越しいただけない場合は、整理券は<strong style="color: var(--red);">無効</strong>となります。</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- 化学マジック (実験一覧) セクション -->
-<section class="section" id="magic">
-<div class="sectionhead"><h2>実験図鑑</h2><span>03 / EXPERIMENTS</span></div>
-<p class="intro">公演で披露される代表的な化学マジックのラインナップと科学的メカニズムです。</p>
-
-<input type="text" id="search" class="search" placeholder="実験名やキーワードで検索（例：蛍光、酸化還元、爆発、pH...）">
-
-<div class="chips">
-  <button class="chip active" data-filter="all">すべて</button>
-  <button class="chip" data-filter="light">光・発光</button>
-  <button class="chip" data-filter="color">色の変化</button>
-  <button class="chip" data-filter="air">空気・気体</button>
-  <button class="chip" data-filter="energy">熱・エネルギー</button>
-  <button class="chip" data-filter="liquid">液体</button>
+  </section>
 </div>
 
-<div class="grid" id="experiment-grid">
+<!-- PAGE: SCHEDULE -->
+<div id="page-schedule" class="page-content" style="display: none;">
+  <section class="section">
+    <div class="sectionhead"><h2>公演情報</h2><span>EVENT SCHEDULE</span></div>
+    <p class="intro">第61回鈴鹿高専祭「collage」における化学マジック公演スケジュール詳細です。</p>
 
-<!-- 実験 01 : アオダモ -->
-<article class="card experiment" data-tags="light liquid" data-search="アオダモ 蛍光 カフェー酸 紫外線 植物 生物 抽出 水和物 光 励起 基底状態">
-<div class="symbol">✧</div>
-<div><span class="tag">光・発光</span><span class="tag">植物・生物</span><span class="tag">液体</span></div>
-<h3>アオダモ</h3>
-<p><strong>概要：</strong> 蛍光現象</p>
-<div class="details">
-<details><summary>解説・見どころ</summary>
-<p>アオダモ（モクセイ科）の枝を水に浸すと、目に見えない成分が少しずつ溶け出します。この水溶液に紫外線を照射すると、鮮やかな青い光を放ちます。<br>この現象は「蛍光」と呼ばれます。アオダモに含まれる成分（カフェー酸などのポリフェノール類）が紫外線の光エネルギーを吸収すると、分子内の電子が高エネルギー状態（励起状態）へ遷移します。その後、より安定な状態（基底状態）へ戻る際に、余分なエネルギーの一部を目に見える光（可視光線・青い光）として放出すしているためです。</p>
+    <div style="background: rgba(16, 37, 51, 0.6); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px; margin-bottom: 16px; color: var(--accent); font-weight: 700; font-size: 15px;">
+      📍 会場：生物応用化学科棟3F 第3合併講義室（入場無料・整理券配布有り）
+    </div>
 
-<figure class="figure-citation">
-  <div class="svg-wrapper">
-    <svg viewBox="0 0 450 180" xmlns="http://www.w3.org/2000/svg" stroke="#000" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-      <polygon points="100,60 100,120 152,150 204,120 204,60 152,30"/>
-      <line x1="108" y1="66" x2="108" y2="114"/>
-      <line x1="152" y1="138" x2="196" y2="114"/>
-      <line x1="152" y1="42" x2="196" y2="66"/>
-      <line x1="100" y1="60" x2="65" y2="40"/>
-      <text x="35" y="42" font-family="sans-serif" font-size="16" font-weight="bold" fill="#000" stroke="none">HO</text>
-      <line x1="100" y1="120" x2="65" y2="140"/>
-      <text x="35" y="148" font-family="sans-serif" font-size="16" font-weight="bold" fill="#000" stroke="none">HO</text>
-      <line x1="204" y1="90" x2="250" y2="90"/>
-      <line x1="250" y1="90" x2="285" y2="60"/>
-      <line x1="250" y1="98" x2="280" y2="72"/>
-      <line x1="285" y1="60" x2="330" y2="90"/>
-      <line x1="330" y1="90" x2="370" y2="65"/>
-      <line x1="327" y1="88" x2="327" y2="130"/>
-      <line x1="333" y1="88" x2="333" y2="130"/>
-      <text x="323" y="152" font-family="sans-serif" font-size="16" font-weight="bold" fill="#000" stroke="none">O</text>
-      <text x="372" y="68" font-family="sans-serif" font-size="16" font-weight="bold" fill="#000" stroke="none">OH</text>
-    </svg>
-  </div>
-  <figcaption class="exp-img-caption">
-    <strong>【図1】 カフェー酸 (Caffeic acid) の化学構造式</strong><br>
-    共役二重結合とベンゼン環を有し、紫外線を吸収して蛍光を示す原因骨格とされる。<br>
-    <span class="small">出典: Wikimedia Commons (Public Domain) <a href="https://commons.wikimedia.org/wiki/File:Caffeic_acid_structure.svg" target="_blank" rel="noopener">閲覧リンク</a></span>
-  </figcaption>
-</figure>
+    <div style="background: rgba(16, 37, 51, 0.4); border: 1px solid var(--line); border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 18px; margin-bottom: 20px;">
+      <div style="display: grid; grid-template-columns: 100px 1fr; gap: 15px; align-items: baseline; padding-bottom: 16px; border-bottom: 1px solid rgba(41, 70, 84, 0.6);">
+        <div style="font-weight: 800; color: var(--accent); font-size: 15px;">10/31 (土)</div>
+        <div>
+          <div style="font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 4px;">第一部 <span style="font-size: 13px; color: var(--accent);">（体験会有り）</span></div>
+          <div style="color: var(--muted); font-size: 14px;">開場 10:30 ／ 開演 11:00</div>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: 100px 1fr; gap: 15px; align-items: baseline; padding-bottom: 16px; border-bottom: 1px solid rgba(41, 70, 84, 0.6);">
+        <div style="font-weight: 800; color: var(--accent); font-size: 15px;">10/31 (土)</div>
+        <div>
+          <div style="font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 4px;">第二部 <span style="font-size: 13px; color: var(--accent);">（体験会有り）</span></div>
+          <div style="color: var(--muted); font-size: 14px;">開場 13:00 ／ 開演 13:30</div>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: 100px 1fr; gap: 15px; align-items: baseline; padding-bottom: 16px; border-bottom: 1px solid rgba(41, 70, 84, 0.6);">
+        <div style="font-weight: 800; color: var(--accent); font-size: 15px;">11/01 (日)</div>
+        <div>
+          <div style="font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 4px;">第一部 <span style="font-size: 13px; color: var(--accent);">（体験会有り）</span></div>
+          <div style="color: var(--muted); font-size: 14px;">開場 10:30 ／ 開演 11:00</div>
+        </div>
+      </div>
+      <div style="background: rgba(19, 45, 59, 0.6); border: 1px solid #3d6359; border-left: 3px solid var(--gold); border-radius: 10px; padding: 16px 20px; display: grid; grid-template-columns: 100px 1fr; gap: 15px; align-items: baseline;">
+        <div style="font-weight: 800; color: var(--gold); font-size: 15px;">11/01 (日)</div>
+        <div>
+          <div style="font-size: 16px; font-weight: 800; color: var(--gold); margin-bottom: 4px;">🌟 最終公演</div>
+          <div style="color: #fff; font-weight: 700; font-size: 15px;">開場 12:40 ／ 開演 13:10</div>
+        </div>
+      </div>
+    </div>
 
-<p>このような化合物は植物を細菌やカビから守る働きを持つこともあり、蛍光はその化合物が持つ性質の一つだと考えられています。</p>
-</details>
-</div>
-</article>
+    <div class="card" style="background: linear-gradient(135deg, #102d3b, #0b1c28); border: 1px solid var(--accent);">
+      <h3 style="font-size: 18px; color: var(--gold); margin-top: 0;">🎟️ 整理券の配布情報とご入場について</h3>
+      
+      <div style="margin-bottom: 14px; font-size: 14px; color: var(--muted);">
+        <strong style="color: var(--text);">📍 配布場所：</strong> MainStage横 
+        <a href="https://www.snct-fes.info/map/" target="_blank" rel="noopener noreferrer" style="margin-left: 8px; font-size: 12px; text-decoration: underline;">
+          🗺️ map詳細はこちら (高専祭公式サイトへ)
+        </a>
+      </div>
 
-<!-- 実験 02 -->
-<article class="card experiment" data-tags="color liquid" data-search="ゲーミング反応 酸化還元反応 インジゴカルミン グルコース 液体 信号反応 グラデーション Lab*">
-<div class="symbol">◉</div><div><span class="tag">色の変化</span><span class="tag">酸化還元反応</span><span class="tag">液体</span></div><h3>ゲーミング反応</h3><p><strong>概要：</strong> 酸化還元反応</p><div class="details"><details><summary>解説・見どころ</summary><p>物質の色は、分子がどの波長の光を吸収するかによって決まります。インジゴカルミンは酸化や還元によって電子の状態が変化するため、吸収する光の種類も変わります。その結果、私たちの目には青・緑・赤・黄など異なる色として見えるのです。<br>この現象は「インジゴカルミン」という色素と、グルコース（ブドウ糖）の酸化還元反応によって起こります。インジゴカルミンは電子を受け取ったり失ったりすると分子の構造が変化し、それに伴って見える色も変わります。</p>
+      <div style="background: var(--panel); padding: 14px; border-radius: 10px; border: 1px solid var(--line); margin-bottom: 16px; font-size: 14px;">
+        <strong style="color: var(--accent); display: block; margin-bottom: 6px;">⏰ 配布開始時間：</strong>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px; color: var(--text);">
+          <div>・<strong>10/31 (土)</strong> 第一部 9:00〜 ／ 第二部 12:00〜</div>
+          <div>・<strong>11/01 (日)</strong> 第一部 9:00〜 ／ 最終公演 12:00〜</div>
+        </div>
+      </div>
 
-<figure class="figure-citation">
-  <div class="svg-wrapper">
-    <svg viewBox="0 0 540 200" xmlns="http://www.w3.org/2000/svg" stroke="#000" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-      <text x="12" y="42" font-family="sans-serif" font-size="16" font-weight="bold" fill="#000" stroke="none">Na⁺</text>
-      <text x="63" y="86" font-family="sans-serif" font-size="16" font-weight="bold" fill="#000" stroke="none">S</text>
-      <line x1="71" y1="68" x2="71" y2="52"/>
-      <line x1="75" y1="68" x2="75" y2="52"/>
-      <text x="68" y="48" font-family="sans-serif" font-size="15" font-weight="bold" fill="#000" stroke="none">O</text>
-      <line x1="60" y1="80" x2="48" y2="80"/>
-      <text x="32" y="85" font-family="sans-serif" font-size="15" font-weight="bold" fill="#000" stroke="none">O⁻</text>
-      <line x1="71" y1="92" x2="71" y2="108"/>
-      <line x1="75" y1="92" x2="75" y2="108"/>
-      <text x="68" y="123" font-family="sans-serif" font-size="15" font-weight="bold" fill="#000" stroke="none">O</text>
-      <line x1="80" y1="80" x2="110" y2="110"/>
-      <polygon points="110,110 110,150 145,170 180,150 180,110 145,90"/>
-      <line x1="116" y1="114" x2="116" y2="146"/>
-      <line x1="145" y1="162" x2="174" y2="146"/>
-      <line x1="145" y1="98" x2="174" y2="114"/>
-      <line x1="180" y1="110" x2="205" y2="105"/>
-      <line x1="205" y1="105" x2="225" y2="125"/>
-      <line x1="225" y1="125" x2="210" y2="140"/>
-      <text x="193" y="152" font-family="sans-serif" font-size="15" font-weight="bold" fill="#000" stroke="none">N</text>
-      <line x1="180" y1="150" x2="192" y2="150"/>
-      <text x="194" y="172" font-family="sans-serif" font-size="14" font-weight="bold" fill="#000" stroke="none">H</text>
-      <line x1="203" y1="105" x2="203" y2="80"/>
-      <line x1="207" y1="105" x2="207" y2="80"/>
-      <text x="200" y="75" font-family="sans-serif" font-size="15" font-weight="bold" fill="#000" stroke="none">O</text>
-      <line x1="212" y1="69" x2="255" y2="69" stroke-dasharray="3 3"/>
-      <text x="257" y="74" font-family="sans-serif" font-size="14" font-weight="bold" fill="#000" stroke="none">H</text>
-      <line x1="264" y1="78" x2="267" y2="92"/>
-      <line x1="225" y1="122" x2="275" y2="122"/>
-      <line x1="225" y1="128" x2="275" y2="128"/>
-      <text x="267" y="107" font-family="sans-serif" font-size="15" font-weight="bold" fill="#000" stroke="none">N</text>
-      <line x1="275" y1="125" x2="295" y2="145"/>
-      <line x1="295" y1="145" x2="320" y2="140"/>
-      <line x1="320" y1="140" x2="320" y2="100"/>
-      <line x1="320" y1="100" x2="278" y2="100"/>
-      <line x1="293" y1="145" x2="293" y2="170"/>
-      <line x1="297" y1="145" x2="297" y2="170"/>
-      <text x="290" y="185" font-family="sans-serif" font-size="15" font-weight="bold" fill="#000" stroke="none">O</text>
-      <text x="238" y="180" font-family="sans-serif" font-size="14" font-weight="bold" fill="#000" stroke="none">H</text>
-      <line x1="235" y1="168" x2="201" y2="155"/>
-      <line x1="248" y1="178" x2="288" y2="178" stroke-dasharray="3 3"/>
-      <polygon points="320,100 320,140 355,160 390,140 390,100 355,80"/>
-      <line x1="326" y1="104" x2="326" y2="136"/>
-      <line x1="355" y1="152" x2="384" y2="136"/>
-      <line x1="355" y1="88" x2="384" y2="104"/>
-      <line x1="390" y1="140" x2="420" y2="170"/>
-      <text x="418" y="180" font-family="sans-serif" font-size="16" font-weight="bold" fill="#000" stroke="none">S</text>
-      <line x1="426" y1="162" x2="426" y2="146"/>
-      <line x1="430" y1="162" x2="430" y2="146"/>
-      <text x="423" y="142" font-family="sans-serif" font-size="15" font-weight="bold" fill="#000" stroke="none">O</text>
-      <line x1="432" y1="175" x2="445" y2="175"/>
-      <text x="448" y="180" font-family="sans-serif" font-size="15" font-weight="bold" fill="#000" stroke="none">O⁻</text>
-      <line x1="426" y1="186" x2="426" y2="202"/>
-      <line x1="430" y1="186" x2="430" y2="202"/>
-      <text x="423" y="217" font-family="sans-serif" font-size="15" font-weight="bold" fill="#000" stroke="none">O</text>
-      <text x="480" y="200" font-family="sans-serif" font-size="16" font-weight="bold" fill="#000" stroke="none">Na⁺</text>
-    </svg>
-  </div>
-  <figcaption class="exp-img-caption">
-    <strong>【図2】 インジゴカルミン (Indigo carmine) の正確な構造式</strong><br>
-    5位および5'位にスルホン酸基（$-\text{SO}_3^-$）を有し、分子内水素結合（$\text{N-H}\cdots\text{O}=\text{C}$）を形成する。<br>
-    <span class="small">出典: Wikimedia Commons (Public Domain) <a href="https://commons.wikimedia.org/wiki/File:Indigo_carmine.svg" target="_blank" rel="noopener">閲覧リンク</a></span>
-  </figcaption>
-</figure>
-
-<p>振とうや攪拌によって空気中の酸素が溶け込むと色素が酸化され、時間が経つとグルコースによって再び還元されます。この酸化と還元のバランスが変化することで、色が連続的に移り変わっていきます。<br>一般的な「信号反応」では緑→赤→黄という段階的な変化が見られますが、ゲーミング反応では色の境目がなめらかにつながり、鮮やかなグラデーションになります。私たちの研究では、この色変化を動画撮影し、Lab*色空間を用いて数値化・解析しました。<br>実験の結果、色彩変化を決める重要な要因はアルカリの種類そのものではなく、溶液のpHであることが示されました。また、色変化は単純な酸化型と還元型だけでは説明できず、その途中で生じる中間体が関与している可能性も示唆されています。</p></details></div></article>
-
-<!-- 実験 03 -->
-<article class="card experiment" data-tags="air energy liquid" data-search="液体窒素の銃 蒸発 低温 圧力 気体 膨張 液体 銃">
-<div class="symbol">❄</div><div><span class="tag">空気・気体</span><span class="tag">熱・エネルギー</span><span class="tag">液体</span></div><h3>液体窒素の銃</h3><p><strong>概要：</strong> 蒸発</p><div class="details"><details><summary>解説・見どころ</summary><p>液体窒素は約−196 ℃の液体ですが、常温ではすぐに気体へと変化します。このとき体積は約700倍にも増えるため、非常に大きな圧力を生み出します。<br>液体窒素の銃は、この液体から気体への急激な体積変化を利用した実験です。容器内で発生した窒素ガスが膨張し、その力によって弾や栓を押し出します。<br>見た目は爆発のように見えますが、燃焼や化学反応によるものではありません。気体が膨張するときに生じる圧力エネルギーによって発射が起こっています。<br>ロケットエンジンやエアガン、自動車のエアバッグなども「気体の圧力」を利用するという点では共通しており、この実験は圧力とエネルギーの関係を体感できる実験です。</p></details></div></article>
-
-<!-- 実験 04 -->
-<article class="card experiment" data-tags="energy liquid" data-search="液体窒素の花 凝固 凍結 低温 生物 細胞 水分 砕ける">
-<div class="symbol">✿</div><div><span class="tag">熱・エネルギー</span><span class="tag">液体</span><span class="tag">生物</span></div><h3>液体窒素の花</h3><p><strong>概要：</strong> 凝固</p><div class="details"><details><summary>解説・見どころ</summary><p>液体窒素は約−196 ℃という非常に低い温度の液体です。花を液体窒素に浸すと、花びらや葉に含まれる水分が急速に凍結します。<br>普段の花は細胞の中にある水分によって柔らかさを保っています。しかし、水分が氷になると細胞は柔軟に変形できなくなり、花全体が硬くなります。そのため、軽く力を加えるだけで砕けてしまいます。<br>実験中には液体窒素から白い霧が発生しますが、これは窒素そのものではなく、周囲の空気中の水蒸気が冷やされて細かな水滴になったものです。<br>一見すると花が「凍って壊れた」だけに見えますが、実際には物質の状態変化や熱の移動、生物の細胞構造など、さまざまな科学の要素が関わっています。</p></details></div></article>
-
-<!-- 実験 05 -->
-<article class="card experiment" data-tags="light energy liquid" data-search="過シュウ酸エステル化学発光 化学発光 過酸化水素 蛍光色素 ペンライト 液体">
-<div class="symbol">✦</div><div><span class="tag">光・発光</span><span class="tag">熱・エネルギー</span><span class="tag">液体</span></div><h3>過シュウ酸エステル化学発光</h3><p><strong>概要：</strong> 化学発光</p><div class="details"><details><summary>解説・見どころ</summary><p>この発光は「化学発光」と呼ばれる現象です。過シュウ酸エステルと過酸化水素が反応すると、高いエネルギーを持った中間体が生成されます。<br>そのエネルギーが蛍光色素へ受け渡されることで、色素中の電子が高いエネルギー状態になります。電子がもとの状態へ戻るとき、その差のエネルギーが光として放出されます。<br>普通の発光では電気や熱によって物質を励起しますが、この実験では化学反応そのものがエネルギー源です。そのため火を使わなくても鮮やかな光が観察できます。<br>発光色は反応する物質ではなく、加える蛍光色素によって決まります。同じ反応でも緑・青・赤・黄などさまざまな色を作ることができ、ペンライトにも応用されています。</p></details></div></article>
-
-<!-- 実験 06 -->
-<article class="card experiment" data-tags="air energy" data-search="粉塵爆発 燃焼 可燃性粉末 表面積 酸素 爆発 固体">
-<div class="symbol">〰</div><div><span class="tag">空気・気体</span><span class="tag">熱・エネルギー</span><span class="tag">固体</span></div><h3>粉塵爆発</h3><p><strong>概要：</strong> 燃焼</p><div class="details"><details><summary>解説・見どころ</summary><p>粉塵爆発は、可燃性の粉末が空気中に細かく分散した状態で着火することで起こります。同じ量の物質でも、塊のままより粉末の方が空気中の酸素と接する面積が大きくなるため、燃焼が一気に進みます。<br>例えば木材は火が付きにくいですが、おがくずや木粉になると燃えやすくなります。これは反応できる表面積が増えるためです。粉塵爆発では、この効果が極端に大きくなり、燃焼が瞬間的に広がります。<br>燃焼によって発生した熱は周囲の粉末にも伝わり、次々と新しい燃焼を引き起こします。この連鎖反応によって炎が急速に広がり、爆発のように見えるのです。<br>粉塵爆発は化学工場だけでなく、製粉工場や穀物サイロ、木材加工工場などでも実際に発生することがあり、産業安全上の重要な課題となっています。</p></details></div></article>
-
-<!-- 実験 07 -->
-<article class="card experiment" data-tags="air" data-search="空気砲 渦輪 圧力 流体 煙 ドーナツ状">
-<div class="symbol">◎</div><div><span class="tag">空気・気体</span><span class="tag">圧力</span><span class="tag">流体</span></div><h3>空気砲</h3><p><strong>概要：</strong> 渦輪</p><div class="details"><details><summary>解説・見どころ</summary><p>空気砲は、箱の中の空気を一気に押し出すことで発生します。押し出された空気は穴の縁で渦を作りながら進み、「渦輪（かりん）」と呼ばれるドーナツ状の空気の塊になります。<br>この渦輪は内部で空気が回転しているため形が崩れにくく、遠くまで飛ぶことができます。煙を入れると、普段は見えない空気の流れを観察することができます。<br>火薬や圧縮ガスを使っているわけではなく、私たちの身の回りにある空気と圧力だけで起こる現象です。しかし、その運動はロケットの噴射流や火山の噴煙、海中の渦など自然界のさまざまな現象とも共通しています。</p></details></div></article>
-
-<!-- 実験 08 -->
-<article class="card experiment" data-tags="energy" data-search="テルミット 酸化還元反応 酸化鉄 アルミニウム 金属 熱">
-<div class="symbol">△</div><div><span class="tag">熱・エネルギー</span><span class="tag">酸化還元反応</span><span class="tag">金属</span></div><h3>テルミット</h3><p><strong>概要：</strong> 酸化還元反応</p><div class="details"><details><summary>解説・見どころ</summary><p>テルミット反応は、酸化鉄とアルミニウム粉末の間で起こる酸化還元反応です。アルミニウムは酸素と非常に強く結びつく性質を持つため、酸化鉄から酸素を奪い取ります。<br>このとき大量のエネルギーが熱として放出され、反応温度は2500 ℃を超えることがあります。その結果、生成した鉄は溶融し、まるで溶岩のように流れ出します。<br>実験では激しい閃光や火花が見られますが、これは放出された膨大なエネルギーによるものです。燃えているように見えますが、現象の本質は「電子の受け渡し」による酸化還元反応です。<br>この反応は発生する熱量が非常に大きいため、実際には鉄道レールの溶接などにも利用されています。</p></details></div></article>
-
-</div><p class="empty" id="empty">一致する実験が見つかりませんでした。別のキーワードで検索してみてください。</p></section>
-
-<!-- 創造工学 セクション -->
-<section class="section" id="creative"><div class="sectionhead"><h2>創造工学</h2><span>04 / PROJECT</span></div><p class="intro">現象を観察するだけでなく、条件を変え、データを集め、結果を分析する。研究プロセスと定量解析を記録します。</p>
-
-<div class="grid">
-<!-- 研究プロジェクト 01 -->
-<article class="card" style="grid-column: 1 / -1;"><div class="symbol">▥</div><span class="tag">PROJECT 01</span><h3>インジゴカルミン酸化還元系におけるpH依存的な可逆的色変化の定量的解析</h3>
-<p><strong>概要：</strong> ゲーミング反応における色彩変化を画像解析によって定量化し、色変化のメカニズムとpHの影響について検討した研究。</p>
-
-<div style="margin: 15px 0; text-align:center;">
-  <p class="small" style="margin-bottom: 8px; text-align:left;"><strong>実験動画記録（YouTube）：</strong></p>
-  <div class="video-embed-container">
-    <iframe src="https://www.youtube.com/embed/IA_zlA5K14E" title="実験動画記録" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  </div>
-  <div style="margin-top: 10px;">
-    <a href="https://youtube.com/shorts/IA_zlA5K14E" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: #282828; color: #fff; border-radius: 20px; font-size: 13px; text-decoration: none; border: 1px solid var(--line);">
-      ▶ YouTubeで直接再生する
-    </a>
-  </div>
+      <div style="font-size: 13px; line-height: 1.8; color: var(--muted); background: rgba(9, 23, 34, 0.6); padding: 16px; border-radius: 10px; border: 1px solid var(--line);">
+        <strong style="color: var(--gold); font-size: 14px; display: block; margin-bottom: 8px; letter-spacing: 0.05em;">📌 整理券・ご観覧に関する注意事項</strong>
+        <ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px;">
+          <li>整理券をお持ちの方は、<strong style="color: var(--accent); background: rgba(113, 221, 207, 0.12); padding: 1px 6px; border-radius: 4px;">座ってご観覧</strong>いただけます。</li>
+          <li>整理券の番号と座席番号は<strong style="color: var(--red); background: rgba(239, 154, 145, 0.12); padding: 1px 6px; border-radius: 4px;">対応していません</strong>。</li>
+          <li>整理券を受け取った方は、<strong style="color: var(--gold); background: rgba(228, 194, 123, 0.12); padding: 1px 6px; border-radius: 4px;">開場10分前までに配布場所と同じ場所</strong>にお越しいただき、順番にお並びください。</li>
+          <li>整理券をお持ちの方の中で、<strong style="color: var(--accent); background: rgba(113, 221, 207, 0.12); padding: 1px 6px; border-radius: 4px;">お並びいただいた順に入場</strong>となります。</li>
+          <li><strong style="color: var(--red); background: rgba(239, 154, 145, 0.2); padding: 2px 6px; border-radius: 4px; border: 1px solid rgba(239, 154, 145, 0.3);">開場5分前までにお越しいただけない場合は、整理券は無効</strong>となります。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 </div>
 
-<div class="details"><details open><summary>研究目的・実験条件・原理と主な結果を見る</summary>
-<p><strong>研究目的：</strong> ゲーミング反応の反応条件と色彩変化の関係を明らかにし、演示実験として最も視覚的効果の高い条件を検討することを目的とした。また、従来は定性的に扱われてきた色彩変化を画像解析によって定量的に評価し、反応機構について考察した。</p>
+<!-- PAGE: EXPERIMENTS -->
+<div id="page-experiments" class="page-content" style="display: none;">
+  <section class="section">
+    <div class="sectionhead"><h2>実験図鑑</h2><span>EXPERIMENTS</span></div>
+    <p class="intro">公演で披露される代表的な化学マジックのラインナップと科学的メカニズムです。</p>
 
-<p><strong>実験条件：</strong> 塩基性試薬を純水に溶解し、グルコースを添加した。その後46〜55 ℃に加温し静置した。pHが11.0〜11.2前後であることを確認後、インジゴカルミンを添加し攪拌して黄色になるまで静置した。その後、マグネティックスターラー（ヘラクレス）を用いて8 rpmで40秒間攪拌し、停止後の色彩変化を動画撮影した。</p>
+    <input type="text" id="search" class="search" placeholder="実験名やキーワードで検索（例：蛍光、酸化還元、爆発、pH...）">
 
-<p><strong>詳細な化学原理・メカニズム：</strong></p>
-<ul>
-  <li><strong>酸化還元と共役系の変化：</strong> インジゴカルミンは酸化状態と還元状態の間を可逆的に変化する色素である。酸化還元反応によって分子内の電子配置が変化すると、共役系の広がりも変化する。その結果、吸収する光の波長が変わり、青色・緑色・赤色・黄色など異なる色として観察される。</li>
-  <li><strong>中間体の関与とグラデーション形成：</strong> ゲーミング反応では、酸化型と還元型だけでなく反応途中に生成する中間体も存在すると考えられる。複数の化学種が同時に存在し、その存在比が時間とともに変化することで、滑らかなグラデーション状の色彩変化が生じる。</li>
-  <li><strong>pHによる反応速度制御：</strong> グルコースによる還元反応は塩基性条件下で促進される。pHの違いによって還元速度や化学種の存在比が変化するため、色変化の速度や発色パターンも大きく変化する。本研究ではアルカリの種類ではなく、pHが反応挙動を支配する主要因であることが示唆された。</li>
-  <li><strong>溶存酸素と可逆反応：</strong> 攪拌中は空気中の酸素が溶液中へ供給されるため酸化反応が進行する。一方、静置するとグルコースによる還元反応が優勢となる。この酸化と還元の競合によって、可逆的な色変化が実現される。</li>
-</ul>
+    <div class="chips">
+      <button class="chip active" data-filter="all">すべて</button>
+      <button class="chip" data-filter="light">光・発光</button>
+      <button class="chip" data-filter="color">色の変化</button>
+      <button class="chip" data-filter="air">空気・気体</button>
+      <button class="chip" data-filter="energy">熱・エネルギー</button>
+      <button class="chip" data-filter="liquid">液体</button>
+    </div>
 
-<p><strong>解析手法・データ：</strong> 実験動画を撮影後、ffmpegを用いてフレーム分割を行った。その後Fiji（ImageJ）を用いて溶液部分のROI（Region of Interest）を抽出し、RGB値およびLab色空間へ変換した。L値を明度、a値を赤−緑軸、b値を黄−青軸として時間変化を追跡し、色彩変化を定量的に比較した。</p>
+    <div class="grid" id="experiment-grid">
 
-<p><strong>主な結果：</strong> 色彩変化はLab*色空間上で連続的な軌跡として表現でき、主観的だった色の変化を定量的に記述することができた。また、発色挙動はアルカリ種よりもpHに強く依存しており、鮮やかなグラデーション形成には適切なpH条件の維持が重要であることが示された。さらに、観察された色彩変化は単純な二状態反応ではなく、中間体を伴う多段階反応であることが示唆された。</p>
+      <!-- 実験 01 -->
+      <article class="card experiment" data-tags="light liquid" data-search="アオダモ 蛍光 カフェー酸 紫外線 植物 生物 抽出 水和物 光 励起 基底状態">
+        <div class="symbol">✧</div>
+        <div><span class="tag-badge">光・発光</span><span class="tag-badge">植物・生物</span><span class="tag-badge">液体</span></div>
+        <h3>アオダモ</h3>
+        <p><strong>概要：</strong> 蛍光現象</p>
+        <div class="details">
+          <details><summary>解説・見どころ</summary>
+            <p>アオダモ（モクセイ科）の枝を水に浸すと、目に見えない成分が少しずつ溶け出します。この水溶液に紫外線を照射すると、鮮やかな青い光を放ちます。<br>この現象は「蛍光」と呼ばれます。アオダモに含まれる成分（カフェー酸などのポリフェノール類）が紫外線の光エネルギーを吸収すると、分子内の電子が高エネルギー状態（励起状態）へ遷移します。その後、より安定な状態（基底状態）へ戻る際に、余分なエネルギーの一部を目に見える光（可視光線・青い光）として放出しているためです。</p>
 
-<p><strong>研究の意義：</strong> 多くの演示実験は定性的な観察に留まることが多い。しかし本研究では動画解析と色空間解析を導入することで、色彩変化を客観的な数値として扱うことができた。この研究は酸化還元反応、有機色素、画像解析、データサイエンスを横断的に結び付ける試みであり、化学マジックを科学的研究へ発展させた事例である。また将来的には取得した色彩データと反応速度論を組み合わせることで、色変化の予測や他の発色反応系への応用も期待される。</p>
-</details></div></article>
+            <figure class="figure-citation">
+              <div class="svg-wrapper">
+                <svg viewBox="0 0 450 180" xmlns="http://www.w3.org/2000/svg" stroke="#000" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="100,60 100,120 152,150 204,120 204,60 152,30"/>
+                  <line x1="108" y1="66" x2="108" y2="114"/>
+                  <line x1="152" y1="138" x2="196" y2="114"/>
+                  <line x1="152" y1="42" x2="196" y2="66"/>
+                  <line x1="100" y1="60" x2="65" y2="40"/>
+                  <text x="35" y="42" font-family="sans-serif" font-size="16" font-weight="bold" fill="#000" stroke="none">HO</text>
+                  <line x1="100" y1="120" x2="65" y2="140"/>
+                  <text x="35" y="148" font-family="sans-serif" font-size="16" font-weight="bold" fill="#000" stroke="none">HO</text>
+                  <line x1="204" y1="90" x2="250" y2="90"/>
+                  <line x1="250" y1="90" x2="285" y2="60"/>
+                  <line x1="250" y1="98" x2="280" y2="72"/>
+                  <line x1="285" y1="60" x2="330" y2="90"/>
+                  <line x1="330" y1="90" x2="370" y2="65"/>
+                  <line x1="327" y1="88" x2="327" y2="130"/>
+                  <line x1="333" y1="88" x2="333" y2="130"/>
+                  <text x="323" y="152" font-family="sans-serif" font-size="16" font-weight="bold" fill="#000" stroke="none">O</text>
+                  <text x="372" y="68" font-family="sans-serif" font-size="16" font-weight="bold" fill="#000" stroke="none">OH</text>
+                </svg>
+              </div>
+              <figcaption class="exp-img-caption">
+                <strong>【図1】 カフェー酸 (Caffeic acid) の化学構造式</strong><br>
+                共役二重結合とベンゼン環を有し、紫外線を吸収して蛍光を示す原因骨格とされる。
+              </figcaption>
+            </figure>
 
-<article class="card"><div class="symbol">📊</div><span class="tag">解析原理 01</span><h3>なぜLab*色空間を使うのか</h3><p>一般的なデジタル画像はRGB（Red, Green, Blue）の3つの値によって色を表現している。しかしRGB値の変化量は、人間が感じる色の違いと必ずしも一致しない。</p><div class="details"><details><summary>詳細解説</summary><p>L*：明度（明るさ）<br>a*：緑 ⇔ 赤<br>b*：青 ⇔ 黄<br><br>を表すLab*色空間は、人間の視覚特性に近い形で色を数値化することができる。そのため、ゲーミング反応のような連続的な色変化を解析する際に有効である。</p></details></div></article>
+            <p>このような化合物は植物を細菌やカビから守る働きを持つこともあり、蛍光はその化合物が持つ性質の一つだと考えられています。</p>
+          </details>
+        </div>
+      </article>
 
-<article class="card"><div class="symbol">🎥</div><span class="tag">解析原理 02</span><h3>動画から色データを取り出す方法</h3><p>実験の様子を動画撮影した後、ffmpegを用いてフレームごとの静止画へ変換した。</p><div class="details"><details><summary>詳細解説</summary><p>その後Fiji（ImageJ）を用いて溶液部分のROI（関心領域）を設定し、各フレームの色データを取得した。<br><br>取得したRGB値をLab*色空間へ変換することで、「少し緑になった」「赤っぽくなった」といった主観的な観察を数値データとして比較できるようになった。</p></details></div></article>
+      <!-- 実験 02 -->
+      <article class="card experiment" data-tags="color liquid" data-search="ゲーミング反応 酸化還元反応 インジゴカルミン グルコース 液体 信号反応 グラデーション Lab*">
+        <div class="symbol">◉</div>
+        <div><span class="tag-badge">色の変化</span><span class="tag-badge">酸化還元反応</span><span class="tag-badge">液体</span></div>
+        <h3>ゲーミング反応</h3>
+        <p><strong>概要：</strong> 酸化還元反応</p>
+        <div class="details">
+          <details><summary>解説・見どころ</summary>
+            <p>物質の色は、分子がどの波長の光を吸収するかによって決まります。インジゴカルミンは酸化や還元によって電子の状態が変化するため、吸収する光の種類も変わります。その結果、私たちの目には青・緑・赤・黄など異なる色として見えるのです。<br>この現象は「インジゴカルミン」という色素と、グルコース（ブドウ糖）の酸化還元反応によって起こります。インジゴカルミンは電子を受け取ったり失ったりすると分子の構造が変化し、それに伴って見える色も変わります。</p>
 
-<article class="card"><div class="symbol">🧪</div><span class="tag">化学原理 01</span><h3>なぜ色が変わるのか</h3><p>物質の色は、分子がどの波長の光を吸収するかによって決まる。インジゴカルミンは酸化還元反応によって分子内の電子配置が変化し、吸収する光の種類も変化する。</p><div class="details"><details><summary>詳細解説</summary><p>その結果、私たちの目には異なる色として認識される。つまりゲーミング反応で観察される色彩変化は、電子の状態変化を視覚的に観察している現象である。</p></details></div></article>
+            <figure class="figure-citation">
+              <div class="svg-wrapper">
+                <svg viewBox="0 0 540 200" xmlns="http://www.w3.org/2000/svg" stroke="#000" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <text x="12" y="42" font-family="sans-serif" font-size="16" font-weight="bold" fill="#000" stroke="none">Na⁺</text>
+                  <text x="63" y="86" font-family="sans-serif" font-size="16" font-weight="bold" fill="#000" stroke="none">S</text>
+                  <line x1="71" y1="68" x2="71" y2="52"/>
+                  <line x1="75" y1="68" x2="75" y2="52"/>
+                  <text x="68" y="48" font-family="sans-serif" font-size="15" font-weight="bold" fill="#000" stroke="none">O</text>
+                  <line x1="60" y1="80" x2="48" y2="80"/>
+                  <text x="32" y="85" font-family="sans-serif" font-size="15" font-weight="bold" fill="#000" stroke="none">O⁻</text>
+                  <line x1="71" y1="92" x2="71" y2="108"/>
+                  <line x1="75" y1="92" x2="75" y2="108"/>
+                  <text x="68" y="123" font-family="sans-serif" font-size="15" font-weight="bold" fill="#000" stroke="none">O</text>
+                  <line x1="80" y1="80" x2="110" y2="110"/>
+                  <polygon points="110,110 110,150 145,170 180,150 180,110 145,90"/>
+                  <line x1="116" y1="114" x2="116" y2="146"/>
+                  <line x1="145" y1="162" x2="174" y2="146"/>
+                  <line x1="145" y1="98" x2="174" y2="114"/>
+                  <line x1="180" y1="110" x2="205" y2="105"/>
+                  <line x1="205" y1="105" x2="225" y2="125"/>
+                  <line x1="225" y1="125" x2="210" y2="140"/>
+                  <text x="193" y="152" font-family="sans-serif" font-size="15" font-weight="bold" fill="#000" stroke="none">N</text>
+                  <line x1="180" y1="150" x2="192" y2="150"/>
+                  <text x="194" y="172" font-family="sans-serif" font-size="14" font-weight="bold" fill="#000" stroke="none">H</text>
+                  <line x1="203" y1="105" x2="203" y2="80"/>
+                  <line x1="207" y1="105" x2="207" y2="80"/>
+                  <text x="200" y="75" font-family="sans-serif" font-size="15" font-weight="bold" fill="#000" stroke="none">O</text>
+                  <line x1="212" y1="69" x2="255" y2="69" stroke-dasharray="3 3"/>
+                  <text x="257" y="74" font-family="sans-serif" font-size="14" font-weight="bold" fill="#000" stroke="none">H</text>
+                  <line x1="264" y1="78" x2="267" y2="92"/>
+                  <line x1="225" y1="122" x2="275" y2="122"/>
+                  <line x1="225" y1="128" x2="275" y2="128"/>
+                  <text x="267" y="107" font-family="sans-serif" font-size="15" font-weight="bold" fill="#000" stroke="none">N</text>
+                  <line x1="275" y1="125" x2="295" y2="145"/>
+                  <line x1="295" y1="145" x2="320" y2="140"/>
+                  <line x1="320" y1="140" x2="320" y2="100"/>
+                  <line x1="320" y1="100" x2="278" y2="100"/>
+                  <line x1="293" y1="145" x2="293" y2="170"/>
+                  <line x1="297" y1="145" x2="297" y2="170"/>
+                  <text x="290" y="185" font-family="sans-serif" font-size="15" font-weight="bold" fill="#000" stroke="none">O</text>
+                  <text x="238" y="180" font-family="sans-serif" font-size="14" font-weight="bold" fill="#000" stroke="none">H</text>
+                  <line x1="235" y1="168" x2="201" y2="155"/>
+                  <line x1="248" y1="178" x2="288" y2="178" stroke-dasharray="3 3"/>
+                  <polygon points="320,100 320,140 355,160 390,140 390,100 355,80"/>
+                  <line x1="326" y1="104" x2="326" y2="136"/>
+                  <line x1="355" y1="152" x2="384" y2="136"/>
+                  <line x1="355" y1="88" x2="384" y2="104"/>
+                  <line x1="390" y1="140" x2="420" y2="170"/>
+                  <text x="418" y="180" font-family="sans-serif" font-size="16" font-weight="bold" fill="#000" stroke="none">S</text>
+                  <line x1="426" y1="162" x2="426" y2="146"/>
+                  <line x1="430" y1="162" x2="430" y2="146"/>
+                  <text x="423" y="142" font-family="sans-serif" font-size="15" font-weight="bold" fill="#000" stroke="none">O</text>
+                  <line x1="432" y1="175" x2="445" y2="175"/>
+                  <text x="448" y="180" font-family="sans-serif" font-size="15" font-weight="bold" fill="#000" stroke="none">O⁻</text>
+                  <line x1="426" y1="186" x2="426" y2="202"/>
+                  <line x1="430" y1="186" x2="430" y2="202"/>
+                  <text x="423" y="217" font-family="sans-serif" font-size="15" font-weight="bold" fill="#000" stroke="none">O</text>
+                  <text x="480" y="200" font-family="sans-serif" font-size="16" font-weight="bold" fill="#000" stroke="none">Na⁺</text>
+                </svg>
+              </div>
+              <figcaption class="exp-img-caption">
+                <strong>【図2】 インジゴカルミン (Indigo carmine) の構造式</strong>
+              </figcaption>
+            </figure>
 
-<article class="card"><div class="symbol">🔗</div><span class="tag">化学原理 02</span><h3>共役系と発色の関係</h3><p>有機色素の発色には共役系と呼ばれる構造が重要である。共役系とは電子が分子内を広く移動できる構造のことであり、その広がりによって吸収する光の波長が決まる。</p><div class="details"><details><summary>詳細解説</summary><p>インジゴカルミンでは酸化還元反応によって電子分布が変化するため、吸収波長も変化する。その結果として色が変化して観察される。</p></details></div></article>
+            <p>振とうや攪拌によって空気中の酸素が溶け込むと色素が酸化され、時間が経つとグルコースによって再び還元されます。この酸化と還元のバランスが変化することで、色が連続的に移り変わっていきます。</p>
+          </details>
+        </div>
+      </article>
 
-<article class="card"><div class="symbol">🌈</div><span class="tag">化学原理 03</span><h3>なぜグラデーションになるのか</h3><p>単純な反応であれば色は瞬間的に切り替わる。しかしゲーミング反応では青から緑、黄色、橙色、赤色へと滑らかな変化が観察される。</p><div class="details"><details><summary>詳細解説</summary><p>これは酸化型・還元型・反応中間体が同時に存在し、それぞれの存在比が時間とともに変化しているためであると考えられる。連続的な色彩変化は、反応系内部で起きている多段階反応を反映している可能性があります。</p></details></div></article>
+      <!-- 実験 03 -->
+      <article class="card experiment" data-tags="air energy liquid" data-search="液体窒素の銃 蒸発 低温 圧力 気体 膨張 液体 銃">
+        <div class="symbol">❄</div>
+        <div><span class="tag-badge">空気・気体</span><span class="tag-badge">熱・エネルギー</span><span class="tag-badge">液体</span></div>
+        <h3>液体窒素の銃</h3>
+        <p><strong>概要：</strong> 蒸発</p>
+        <div class="details">
+          <details><summary>解説・見どころ</summary>
+            <p>液体窒素は約−196 ℃の液体ですが、常温ではすぐに気体へと変化します。このとき体積は約700倍にも増えるため、非常に大きな圧力を生み出します。<br>容器内で発生した窒素ガスが膨張し、その力によって弾や栓を押し出します。圧力とエネルギーの関係を体感できる実験です。</p>
+          </details>
+        </div>
+      </article>
 
-<article class="card"><div class="symbol">⚖️</div><span class="tag">化学原理 04</span><h3>pHが重要な理由</h3><p>本反応ではグルコースが還元剤として働く。しかし中性条件では反応性が低く、十分な色変化が起こらない。</p><div class="details"><details><summary>詳細解説</summary><p>塩基性条件下ではグルコースの還元作用が強くなり、インジゴカルミンの還元速度が大きく変化する。そのため、pHの違いが色変化の速度や発色パターンに大きな影響を与える。</p></details></div></article>
+      <!-- 実験 04 -->
+      <article class="card experiment" data-tags="energy liquid" data-search="液体窒素の花 凝固 凍結 低温 生物 細胞 水分 砕ける">
+        <div class="symbol">✿</div>
+        <div><span class="tag-badge">熱・エネルギー</span><span class="tag-badge">液体</span><span class="tag-badge">生物</span></div>
+        <h3>液体窒素の花</h3>
+        <p><strong>概要：</strong> 凝固</p>
+        <div class="details">
+          <details><summary>解説・見どころ</summary>
+            <p>花を液体窒素に浸すと、花びらや葉に含まれる水分が急速に凍結します。細胞の中にある水分が氷になると細胞は柔軟に変形できなくなり、軽く力を加えるだけで細かく砕け散ります。</p>
+          </details>
+        </div>
+      </article>
 
-<article class="card"><div class="symbol">🔄</div><span class="tag">化学原理 05</span><h3>可逆反応と動的平衡</h3><p>ゲーミング反応は可逆的な酸化還元反応である。</p><div class="details"><details><summary>詳細解説</summary><p>攪拌すると空気中の酸素が供給されるため酸化反応が進行し、静置するとグルコースによる還元反応が優勢になる。<br><br>溶液中では常に酸化反応と還元反応が同時に進行しており、その速度バランスが変化することで色彩も変化する。このような状態を動的平衡という。</p></details></div></article>
+      <!-- 実験 05 -->
+      <article class="card experiment" data-tags="light energy liquid" data-search="過シュウ酸エステル化学発光 化学発光 過酸化水素 蛍光色素 ペンライト 液体">
+        <div class="symbol">✦</div>
+        <div><span class="tag-badge">光・発光</span><span class="tag-badge">熱・エネルギー</span><span class="tag-badge">液体</span></div>
+        <h3>過シュウ酸エステル化学発光</h3>
+        <p><strong>概要：</strong> 化学発光</p>
+        <div class="details">
+          <details><summary>解説・見どころ</summary>
+            <p>過シュウ酸エステルと過酸化水素が反応して生じたエネルギーが蛍光色素へ受け渡され、電子が元の状態に戻る際に鮮やかな光を放ちます。火を使わない安全な発光でペンライトにも応用されています。</p>
+          </details>
+        </div>
+      </article>
 
-</div></section>
+      <!-- 実験 06 -->
+      <article class="card experiment" data-tags="air energy" data-search="粉塵爆発 燃焼 可燃性粉末 表面積 酸素 爆発 固体">
+        <div class="symbol">〰</div>
+        <div><span class="tag-badge">空気・気体</span><span class="tag-badge">熱・エネルギー</span><span class="tag-badge">固体</span></div>
+        <h3>粉塵爆発</h3>
+        <p><strong>概要：</strong> 燃焼</p>
+        <div class="details">
+          <details><summary>解説・見どころ</summary>
+            <p>可燃性の粉末が空気中に分散した状態で着火すると、表面積が非常に大きいため一気に連鎖的な燃焼が広がります。産業安全上でも重要視される現象です。</p>
+          </details>
+        </div>
+      </article>
 
-<!-- 安全 セクション -->
-<section class="section" id="safety"><div class="sectionhead"><h2>安全について</h2><span>05 / SAFETY</span></div><div class="notice">このサイトは教育・解説・活動記録を目的としています。危険ですので絶対に真似しないようお願いいたします。</div></section>
-</main><footer><div class="wrap">CHEMISTRY LAB ARCHIVE · 化学マジックと創造工学の記録</div></footer>
+      <!-- 実験 07 -->
+      <article class="card experiment" data-tags="air" data-search="空気砲 渦輪 圧力 流体 煙 ドーナツ状">
+        <div class="symbol">◎</div>
+        <div><span class="tag-badge">空気・気体</span><span class="tag-badge">圧力</span><span class="tag-badge">流体</span></div>
+        <h3>空気砲</h3>
+        <p><strong>概要：</strong> 渦輪</p>
+        <div class="details">
+          <details><summary>解説・見どころ</summary>
+            <p>押し出された空気が穴の縁でドーナツ状の回転する渦（渦輪）を作ります。型崩れしにくいため離れた場所まで空気を届けることができます。</p>
+          </details>
+        </div>
+      </article>
 
-<!-- JavaScript 機能定義 -->
+      <!-- 実験 08 -->
+      <article class="card experiment" data-tags="energy" data-search="テルミット 酸化還元反応 酸化鉄 アルミニウム 金属 熱">
+        <div class="symbol">△</div>
+        <div><span class="tag-badge">熱・エネルギー</span><span class="tag-badge">酸化還元反応</span><span class="tag-badge">金属</span></div>
+        <h3>テルミット</h3>
+        <p><strong>概要：</strong> 酸化還元反応</p>
+        <div class="details">
+          <details><summary>解説・見どころ</summary>
+            <p>酸化鉄とアルミニウム粉末間の強力な酸化還元反応により2500℃を超える高熱が発生します。生成した鉄がドロドロに溶ける迫力ある実験です。</p>
+          </details>
+        </div>
+      </article>
+
+    </div>
+    <p class="empty" id="empty">一致する実験が見つかりませんでした。別のキーワードで検索してみてください。</p>
+  </section>
+</div>
+
+<!-- PAGE: CREATIVE -->
+<div id="page-creative" class="page-content" style="display: none;">
+  <section class="section">
+    <div class="sectionhead"><h2>創造工学</h2><span>PROJECT</span></div>
+    <p class="intro">現象を観察するだけでなく、条件を変え、データを集め、結果を分析する。研究プロセスと定量解析を記録します。</p>
+
+    <div class="grid">
+      <!-- 研究プロジェクト 01 (情報量完全復元版) -->
+      <article class="card" style="grid-column: 1 / -1;">
+        <div class="symbol">▥</div>
+        <span class="tag-badge">PROJECT 01</span>
+        <h3>インジゴカルミン酸化還元系におけるpH依存的な可逆的色変化の定量的解析</h3>
+        <p><strong>概要：</strong> ゲーミング反応における色彩変化を画像解析によって定量化し、色変化のメカニズムとpHの影響について検討した研究。</p>
+
+        <div style="margin: 15px 0; text-align:center;">
+          <p class="small" style="margin-bottom: 8px; text-align:left;"><strong>実験動画記録（YouTube）：</strong></p>
+          <div class="video-embed-container">
+            <iframe src="https://www.youtube.com/embed/IA_zlA5K14E" title="実験動画記録" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div style="margin-top: 10px;">
+            <a href="https://youtube.com/shorts/IA_zlA5K14E" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: #282828; color: #fff; border-radius: 20px; font-size: 13px; text-decoration: none; border: 1px solid var(--line);">
+              ▶ YouTubeで直接再生する
+            </a>
+          </div>
+        </div>
+
+        <div class="details">
+          <details open>
+            <summary>研究目的・実験条件・原理と主な結果を見る</summary>
+            <p><strong>研究目的：</strong> ゲーミング反応の反応条件と色彩変化の関係を明らかにし、演示実験として最も視覚的効果の高い条件を検討することを目的とした。また、従来は定性的に扱われてきた色彩変化を画像解析によって定量的に評価し、反応機構について考察した。</p>
+
+            <p><strong>実験条件：</strong> 塩基性試薬を純水に溶解し、グルコースを添加した。その後46〜55 ℃に加温し静置した。pHが11.0〜11.2前後であることを確認後、インジゴカルミンを添加し攪拌して黄色になるまで静置した。その後、マグネティックスターラー（ヘラクレス）を用いて8 rpmで40秒間攪拌し、停止後の色彩変化を動画撮影した。</p>
+
+            <p><strong>詳細な化学原理・メカニズム：</strong></p>
+            <ul>
+              <li><strong>酸化還元と共役系の変化：</strong> インジゴカルミンは酸化状態と還元状態の間を可逆的に変化する色素である。酸化還元反応によって分子内の電子配置が変化すると、共役系の広がりも変化する。その結果、吸収する光の波長が変わり、青色・緑色・赤色・黄色など異なる色として観察される。</li>
+              <li><strong>中間体の関与とグラデーション形成：</strong> ゲーミング反応では、酸化型と還元型だけでなく反応途中に生成する中間体も存在すると考えられる。複数の化学種が同時に存在し、その存在比が時間とともに変化することで、滑らかなグラデーション状の色彩変化が生じる。</li>
+              <li><strong>pHによる反応速度制御：</strong> グルコースによる還元反応は塩基性条件下で促進される。pHの違いによって還元速度や化学種の存在比が変化するため、色変化の速度や発色パターンも大きく変化する。本研究ではアルカリの種類ではなく、pHが反応挙動を支配する主要因であることが示唆された。</li>
+              <li><strong>溶存酸素と可逆反応：</strong> 攪拌中は空気中の酸素が溶液中へ供給されるため酸化反応が進行する。一方、静置するとグルコースによる還元反応が優勢となる。この酸化と還元の競合によって、可逆的な色変化が実現される。</li>
+            </ul>
+
+            <p><strong>解析手法・データ：</strong> 実験動画を撮影後、ffmpegを用いてフレーム分割を行った。その後Fiji（ImageJ）を用いて溶液部分のROI（Region of Interest）を抽出し、RGB値およびLab色空間へ変換した。L値を明度、a値を赤−緑軸、b値を黄−青軸として時間変化を追跡し、色彩変化を定量的に比較した。</p>
+
+            <p><strong>主な結果：</strong> 色彩変化はLab*色空間上で連続的な軌跡として表現でき、主観的だった色の変化を定量的に記述することができた。また、発色挙動はアルカリ種よりもpHに強く依存しており、鮮やかなグラデーション形成には適切なpH条件の維持が重要であることが示された。さらに、観察された色彩変化は単純な二状態反応ではなく、中間体を伴う多段階反応であることが示唆された。</p>
+
+            <p><strong>研究の意義：</strong> 多くの演示実験は定性的な観察に留まることが多い。しかし本研究では動画解析と色空間解析を導入することで、色彩変化を客観的な数値として扱うことができた。この研究は酸化還元反応、有機色素、画像解析、データサイエンスを横断的に結び付ける試みであり、化学マジックを科学的研究へ発展させた事例である。また将来的には取得した色彩データと反応速度論を組み合わせることで、色変化の予測や他の発色反応系への応用も期待される。</p>
+          </details>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="symbol">📊</div>
+        <span class="tag-badge">解析原理 01</span>
+        <h3>なぜLab*色空間を使うのか</h3>
+        <p>一般的なデジタル画像はRGB（Red, Green, Blue）の3つの値によって色を表現している。しかしRGB値の変化量は、人間が感じる色の違いと必ずしも一致しない。</p>
+        <div class="details"><details><summary>詳細解説</summary><p>L*：明度（明るさ）<br>a*：緑 ⇔ 赤<br>b*：青 ⇔ 黄<br><br>を表すLab*色空間は、人間の視覚特性に近い形でお色を数値化することができる。そのため、ゲーミング反応のような連続的な色変化を解析する際に有効である。</p></details></div>
+      </article>
+
+      <article class="card">
+        <div class="symbol">🎥</div>
+        <span class="tag-badge">解析原理 02</span>
+        <h3>動画から色データを取り出す方法</h3>
+        <p>実験の様子を動画撮影した後、ffmpegを用いてフレームごとの静止画へ変換した。</p>
+        <div class="details"><details><summary>詳細解説</summary><p>その後Fiji（ImageJ）を用いて溶液部分のROI（関心領域）を設定し、各フレームの色データを取得した。<br><br>取得したRGB値をLab*色空間へ変換することで、「少し緑になった」「赤っぽくなった」といった主観的な観察を数値データとして比較できるようになった。</p></details></div>
+      </article>
+
+      <article class="card">
+        <div class="symbol">🧪</div>
+        <span class="tag-badge">化学原理 01</span>
+        <h3>なぜ色が変わるのか</h3>
+        <p>物質の色は、分子がどの波長の光を吸収するかによって決まる。インジゴカルミンは酸化還元反応によって分子内の電子配置が変化し、吸収する光の種類も変化する。</p>
+        <div class="details"><details><summary>詳細解説</summary><p>その結果、私たちの目には異なる色として認識される。つまりゲーミング反応で観察される色彩変化は、電子の状態変化を視覚的に観察している現象である。</p></details></div>
+      </article>
+
+      <article class="card">
+        <div class="symbol">🔗</div>
+        <span class="tag-badge">化学原理 02</span>
+        <h3>共役系と発色の関係</h3>
+        <p>有機色素の発色には共役系と呼ばれる構造が重要である。共役系とは電子が分子内を広く移動できる構造のことであり、その広がりによって吸収する光の波長が決まる。</p>
+        <div class="details"><details><summary>詳細解説</summary><p>インジゴカルミンでは酸化還元反応によって電子分布が変化するため、吸収波長も変化する。その結果として色が変化して観察される。</p></details></div>
+      </article>
+
+      <article class="card">
+        <div class="symbol">🌈</div>
+        <span class="tag-badge">化学原理 03</span>
+        <h3>なぜグラデーションになるのか</h3>
+        <p>単純な反応であれば色は瞬間的に切り替わる。しかしゲーミング反応では青から緑、黄色、橙色、赤色へと滑らかな変化が観察される。</p>
+        <div class="details"><details><summary>詳細解説</summary><p>これは酸化型・還元型・反応中間体が同時に存在し、それぞれの存在比が時間とともに変化しているためであると考えられる。連続的な色彩変化は、反応系内部で起きている多段階反応を反映している可能性があります。</p></details></div>
+      </article>
+
+      <article class="card">
+        <div class="symbol">⚖️</div>
+        <span class="tag-badge">化学原理 04</span>
+        <h3>pHが重要な理由</h3>
+        <p>本反応ではグルコースが還元剤として働く。しかし中性条件では反応性が低く、十分な色変化が起こらない。</p>
+        <div class="details"><details><summary>詳細解説</summary><p>塩基性条件下ではグルコースの還元作用が強くなり、インジゴカルミンの還元速度が大きく変化する。そのため、pHの違いが色変化の速度や発色パターンに大きな影響を与える。</p></details></div>
+      </article>
+
+      <article class="card">
+        <div class="symbol">🔄</div>
+        <span class="tag-badge">化学原理 05</span>
+        <h3>可逆反応と動的平衡</h3>
+        <p>ゲーミング反応は可逆的な酸化還元反応である。</p>
+        <div class="details"><details><summary>詳細解説</summary><p>攪拌すると空気中の酸素が供給されるため酸化反応が進行し、静置するとグルコースによる還元反応が優勢になる。<br><br>溶液中では常に酸化反応と還元反応が同時に進行しており、その速度バランスが変化することで色彩も変化する。このような状態を動的平衡という。</p></details></div>
+      </article>
+    </div>
+  </section>
+</div>
+
+<!-- PAGE: SAFETY -->
+<div id="page-safety" class="page-content" style="display: none;">
+  <section class="section">
+    <div class="sectionhead"><h2>安全について</h2><span>SAFETY</span></div>
+    <div class="notice">
+      <h3 style="margin-top:0; color: var(--gold);">⚠️ 安全管理とご案内</h3>
+      <p>当ウェブサイトで紹介している実験内容は、教育・解説・活動記録を目的としたものです。</p>
+      <p>公演中の実験は専門の知見を持つ指導者の監督のもと、十分な安全管理・防護具の着用・換気設備を備えた環境で実施されています。</p>
+      <p>また、実験パフォーマンスで<strong>液体窒素</strong>を使用する際は、窒息（酸素欠乏）事故を防止するため、会場内の<strong>十分な空気換気（サーキュレーターや換気設備等の稼働）</strong>を常時徹底して行っています。</p>
+      <p>演出用スモーク（空気砲など）で使用する煙につきましても、安全性が確認された成分（食品添加物や化粧品等にも使用されるグリセリン系・グリコール系等）を使用しており、吸い込んでも体に害はありませんので安心してお楽しみください。</p>
+      <p>危険を伴う化学物質や反応も含まれますので、ご家庭や許可されていない場所での<strong>模倣・再演は絶対に行わないでください</strong>。</p>
+    </div>
+  </section>
+</div>
+
+</main>
+
+<footer>
+  <div class="wrap foot">CHEMISTRY LAB ARCHIVE · 化学マジック2026</div>
+</footer>
+
 <script>
+function switchPage(pageId) {
+  document.querySelectorAll('.page-content').forEach(el => el.style.display = 'none');
+  const target = document.getElementById('page-' + pageId);
+  if (target) {
+    target.style.display = 'block';
+  }
+  document.querySelectorAll('.navlinks a').forEach(el => el.classList.remove('active'));
+  const activeNav = document.getElementById('nav-' + pageId);
+  if (activeNav) {
+    activeNav.classList.add('active');
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-  // カウントダウンタイマー
   const targetDate = new Date('2026-10-31T10:30:00+09:00').getTime();
   const scheduleCountdownEl = document.getElementById('schedule-countdown');
-
   function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = targetDate - now;
-
-    let text = '';
+    const distance = targetDate - new Date().getTime();
     if (distance < 0) {
-      text = '🎉 高専祭・化学マジック開催中！';
-    } else {
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      text = `${days}日 ${hours}時間 ${minutes}分 ${seconds}秒`;
+      if (scheduleCountdownEl) scheduleCountdownEl.innerText = '🎉 高専祭・化学マジック開催中！';
+      return;
     }
-
-    if (scheduleCountdownEl) scheduleCountdownEl.innerText = text;
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    if (scheduleCountdownEl) scheduleCountdownEl.innerText = `${days}日 ${hours}時間 ${minutes}分 ${seconds}秒`;
   }
-
   updateCountdown();
   setInterval(updateCountdown, 1000);
 
-  // 検索・フィルタリング処理
   const search = document.getElementById('search');
   const cards = [...document.querySelectorAll('.experiment')];
   const chips = [...document.querySelectorAll('.chip')];
@@ -524,5 +1008,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }));
 });
 </script>
+
 </body>
 </html>
